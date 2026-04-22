@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>أكواد أعطال المكيفات</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f0f4f8;
+  --surface: #ffffff;
+  --surface2: #e8eef5;
+  --border: #d1dce8;
+  --text: #1a2332;
+  --muted: #6b7c93;
+  --samsung: #1428a0;
+  --lg: #a50034;
+  --general: #cc0000;
+  --haier: #0072bc;
+  --geant: #1a7a3c;
+  --other: #6b21a8;
+  --compressor: #dc6b19;
+  --electric: #b91c1c;
+  --sensor: #0369a1;
+  --refrigerant: #0d9488;
+  --accent: #1e40af;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: 'Cairo', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+/* TOP BAR */
+.topbar {
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #0f172a 100%);
+  color: white;
+  padding: 0 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+}
+
+.topbar-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-icon {
+  width: 46px;
+  height: 46px;
+  background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  box-shadow: 0 0 20px rgba(56,189,248,0.4);
+  flex-shrink: 0;
+}
+
+.logo-text h1 { font-size: 18px; font-weight: 900; color: #e2e8f0; }
+.logo-text p { font-size: 10px; color: #94a3b8; letter-spacing: 1px; }
+
+.stats {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.stat {
+  text-align: center;
+  background: rgba(255,255,255,0.07);
+  padding: 6px 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.stat-n { font-size: 20px; font-weight: 900; color: #38bdf8; font-family: 'IBM Plex Mono', monospace; }
+.stat-l { font-size: 10px; color: #94a3b8; }
+
+/* SEARCH */
+.search-wrap {
+  background: linear-gradient(180deg, #1e3a5f 0%, #f0f4f8 100%);
+  padding: 28px 20px 24px;
+}
+
+.search-inner { max-width: 750px; margin: 0 auto; }
+
+.search-box {
+  position: relative;
+  margin-bottom: 14px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 15px 52px 15px 20px;
+  border-radius: 14px;
+  border: 2px solid var(--border);
+  background: white;
+  font-size: 15px;
+  font-family: 'Cairo', sans-serif;
+  color: var(--text);
+  outline: none;
+  transition: all 0.3s;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.search-box input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(30,64,175,0.1);
+}
+
+.search-box input::placeholder { color: var(--muted); }
+.search-icon { position: absolute; left: 17px; top: 50%; transform: translateY(-50%); font-size: 20px; pointer-events: none; }
+
+/* BRAND TABS */
+.brand-tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.brand-tab {
+  padding: 7px 16px;
+  border-radius: 30px;
+  border: 2px solid transparent;
+  background: white;
+  font-size: 13px;
+  font-family: 'Cairo', sans-serif;
+  cursor: pointer;
+  font-weight: 700;
+  transition: all 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  color: var(--muted);
+}
+
+.brand-tab[data-brand="all"].active, .brand-tab[data-brand="all"]:hover { background: #0f172a; color: white; border-color: #0f172a; }
+.brand-tab[data-brand="samsung"].active, .brand-tab[data-brand="samsung"]:hover { background: var(--samsung); color: white; border-color: var(--samsung); }
+.brand-tab[data-brand="lg"].active, .brand-tab[data-brand="lg"]:hover { background: var(--lg); color: white; border-color: var(--lg); }
+.brand-tab[data-brand="general"].active, .brand-tab[data-brand="general"]:hover { background: var(--general); color: white; border-color: var(--general); }
+.brand-tab[data-brand="haier"].active, .brand-tab[data-brand="haier"]:hover { background: var(--haier); color: white; border-color: var(--haier); }
+.brand-tab[data-brand="geant"].active, .brand-tab[data-brand="geant"]:hover { background: var(--geant); color: white; border-color: var(--geant); }
+
+/* TYPE FILTERS */
+.type-filters {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.type-btn {
+  padding: 5px 13px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: white;
+  font-size: 12px;
+  font-family: 'Cairo', sans-serif;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: var(--muted);
+}
+
+.type-btn.active, .type-btn:hover { color: white; }
+.type-btn[data-type="all"].active { background: #475569; border-color: #475569; }
+.type-btn[data-type="compressor"].active { background: var(--compressor); border-color: var(--compressor); }
+.type-btn[data-type="electric"].active { background: var(--electric); border-color: var(--electric); }
+.type-btn[data-type="sensor"].active { background: var(--sensor); border-color: var(--sensor); }
+.type-btn[data-type="refrigerant"].active { background: var(--refrigerant); border-color: var(--refrigerant); }
+.type-btn[data-type="communication"].active { background: var(--other); border-color: var(--other); }
+
+/* MAIN */
+.main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.results-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  font-size: 13px;
+  color: var(--muted);
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.results-bar span { color: var(--accent); font-weight: 700; }
+
+/* CARDS */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 14px;
+}
+
+.card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  cursor: pointer;
+  transition: all 0.25s;
+  animation: up 0.35s ease forwards;
+  opacity: 0;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+  border-color: #93c5fd;
+}
+
+@keyframes up { from { opacity:0; transform: translateY(10px); } to { opacity:1; transform: translateY(0); } }
+
+.card-top {
+  padding: 14px 16px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border);
+  gap: 10px;
+}
+
+.code-wrap { display: flex; align-items: center; gap: 10px; }
+
+.code {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 8px;
+  color: white;
+  letter-spacing: 1px;
+}
+
+.brand-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+
+.badges { display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end; }
+
+.badge {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 20px;
+}
+
+.card-body { padding: 12px 16px; }
+
+.fault-name {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+.info { font-size: 12px; color: var(--muted); line-height: 1.6; margin-bottom: 4px; }
+.info strong { color: var(--text); font-weight: 600; }
+
+.card-foot {
+  padding: 10px 16px;
+  background: #f8fafc;
+  border-top: 1px solid var(--border);
+  font-size: 12px;
+  color: #166534;
+  line-height: 1.5;
+}
+
+.foot-label { font-weight: 700; color: #15803d; margin-bottom: 3px; }
+
+/* brand colors */
+.bg-samsung { background: var(--samsung); }
+.bg-lg { background: var(--lg); }
+.bg-general { background: var(--general); }
+.bg-haier { background: var(--haier); }
+.bg-geant { background: var(--geant); }
+.bg-other { background: var(--other); }
+
+.dot-samsung { background: var(--samsung); }
+.dot-lg { background: var(--lg); }
+.dot-general { background: var(--general); }
+.dot-haier { background: var(--haier); }
+.dot-geant { background: var(--geant); }
+.dot-other { background: var(--other); }
+
+/* type badge colors */
+.tb-compressor { background: #fef3c7; color: #92400e; }
+.tb-electric { background: #fee2e2; color: #991b1b; }
+.tb-sensor { background: #dbeafe; color: #1e40af; }
+.tb-refrigerant { background: #ccfbf1; color: #134e4a; }
+.tb-communication { background: #ede9fe; color: #5b21b6; }
+.tb-other { background: #f1f5f9; color: #475569; }
+
+/* severity */
+.sev-high { background: #fee2e2; color: #991b1b; }
+.sev-med { background: #fef3c7; color: #92400e; }
+.sev-low { background: #dcfce7; color: #166534; }
+
+/* MODAL */
+.overlay {
+  position: fixed; inset: 0;
+  background: rgba(15,23,42,0.75);
+  z-index: 300;
+  display: flex; align-items: center; justify-content: center;
+  padding: 20px;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.3s;
+  backdrop-filter: blur(6px);
+}
+.overlay.open { opacity:1; pointer-events: all; }
+
+.modal {
+  background: white;
+  border-radius: 20px;
+  max-width: 580px; width: 100%;
+  max-height: 88vh; overflow-y: auto;
+  transform: scale(0.92);
+  transition: transform 0.3s;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+}
+.overlay.open .modal { transform: scale(1); }
+
+.modal-head {
+  padding: 22px 22px 16px;
+  border-bottom: 1px solid var(--border);
+  display: flex; justify-content: space-between; align-items: flex-start; gap: 14px;
+  position: sticky; top: 0; background: white; z-index: 1;
+}
+
+.modal-code-big {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 34px; font-weight: 700;
+  padding: 6px 16px;
+  border-radius: 12px;
+  color: white;
+  display: inline-block;
+  margin-bottom: 6px;
+}
+
+.modal-name { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+.modal-close {
+  width: 34px; height: 34px; border-radius: 8px;
+  border: 1px solid var(--border); background: var(--surface2);
+  color: var(--text); font-size: 16px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.2s; flex-shrink: 0;
+}
+.modal-close:hover { background: #fee2e2; border-color: #fca5a5; }
+
+.modal-body { padding: 20px; }
+
+.msec { margin-bottom: 18px; }
+.msec-title {
+  font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+  padding-bottom: 7px; border-bottom: 2px solid var(--border); margin-bottom: 10px;
+}
+.msec-title.cause { color: var(--electric); border-color: #fee2e2; }
+.msec-title.solution { color: #15803d; border-color: #dcfce7; }
+.msec-title.type { color: var(--sensor); border-color: #dbeafe; }
+.msec-title.note { color: var(--compressor); border-color: #fef3c7; }
+
+.msec-text { font-size: 14px; line-height: 1.9; color: var(--text); }
+
+.steps { list-style: none; }
+.steps li {
+  padding: 8px 12px 8px 36px;
+  position: relative;
+  font-size: 13px;
+  line-height: 1.7;
+  border-radius: 8px;
+  margin-bottom: 6px;
+  background: #f8fafc;
+}
+.steps li::before {
+  content: attr(data-n);
+  position: absolute; right: 12px; top: 10px;
+  width: 20px; height: 20px;
+  background: var(--accent); color: white;
+  border-radius: 50%; font-size: 11px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* NO RESULTS */
+.empty { text-align: center; padding: 60px 20px; color: var(--muted); }
+.empty .ico { font-size: 52px; margin-bottom: 14px; }
+.empty h3 { font-size: 18px; color: var(--text); margin-bottom: 6px; }
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+@media(max-width:600px){
+  .grid { grid-template-columns: 1fr; }
+  .stats { display: none; }
+  .modal-code-big { font-size: 26px; }
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="logo">
+      <div class="logo-icon">❄️</div>
+      <div class="logo-text">
+        <h1>أكواد أعطال المكيفات</h1>
+        <p>AC FAULT CODE DIAGNOSTIC SYSTEM</p>
+      </div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n" id="sTot">0</div><div class="stat-l">إجمالي الأكواد</div></div>
+      <div class="stat"><div class="stat-n" id="sBrands">5</div><div class="stat-l">ماركة</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="search-wrap">
+  <div class="search-inner">
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="ابحث بالكود مثل E1، أو اسم العطل، أو السبب..." oninput="render()">
+      <span class="search-icon">🔍</span>
+    </div>
+    <div class="brand-tabs" id="brandTabs">
+      <button class="brand-tab active" data-brand="all" onclick="setBrand('all',this)">🌐 الكل</button>
+      <button class="brand-tab" data-brand="samsung" onclick="setBrand('samsung',this)">Samsung</button>
+      <button class="brand-tab" data-brand="lg" onclick="setBrand('lg',this)">LG</button>
+      <button class="brand-tab" data-brand="general" onclick="setBrand('general',this)">General</button>
+      <button class="brand-tab" data-brand="haier" onclick="setBrand('haier',this)">Haier</button>
+      <button class="brand-tab" data-brand="geant" onclick="setBrand('geant',this)">Géant/Artico</button>
+    </div>
+    <div class="type-filters" id="typeFilters">
+      <button class="type-btn active" data-type="all" onclick="setType('all',this)">الكل</button>
+      <button class="type-btn" data-type="compressor" onclick="setType('compressor',this)">🔧 الكمبروسور</button>
+      <button class="type-btn" data-type="electric" onclick="setType('electric',this)">⚡ كهربائي</button>
+      <button class="type-btn" data-type="sensor" onclick="setType('sensor',this)">📡 حساسات</button>
+      <button class="type-btn" data-type="refrigerant" onclick="setType('refrigerant',this)">🧊 التبريد والغاز</button>
+      <button class="type-btn" data-type="communication" onclick="setType('communication',this)">📶 اتصال</button>
+    </div>
+  </div>
+</div>
+
+<div class="main">
+  <div class="results-bar">
+    <div>عرض <span id="visCount">0</span> كود عطل</div>
+  </div>
+  <div class="grid" id="grid"></div>
+  <div class="empty" id="empty" style="display:none">
+    <div class="ico">❄️</div>
+    <h3>لا توجد نتائج</h3>
+    <p>جرب كلمة بحث مختلفة أو غير الفلتر</p>
+  </div>
+</div>
+
+<!-- MODAL -->
+<div class="overlay" id="overlay" onclick="closeOverlay(event)">
+  <div class="modal" id="modal">
+    <div class="modal-head">
+      <div>
+        <div class="modal-code-big" id="mCode"></div>
+        <div class="modal-name" id="mName"></div>
+        <div id="mBadges"></div>
+      </div>
+      <button class="modal-close" onclick="closeModal()">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="msec">
+        <div class="msec-title type">🔧 نوع العطل</div>
+        <div class="msec-text" id="mTypeTxt"></div>
+      </div>
+      <div class="msec">
+        <div class="msec-title cause">⚠️ سبب العطل</div>
+        <div class="msec-text" id="mCause"></div>
+      </div>
+      <div class="msec">
+        <div class="msec-title solution">✅ خطوات الإصلاح</div>
+        <ol class="steps" id="mSteps"></ol>
+      </div>
+      <div class="msec" id="mNoteSec" style="display:none">
+        <div class="msec-title note">📝 ملاحظة مهمة</div>
+        <div class="msec-text" id="mNote"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ===================== DATA =====================
+const faults = [
+  // ===== SAMSUNG =====
+  { brand:'samsung', code:'E1', name:'خطأ في حساس درجة الحرارة الداخلية', type:'sensor', typeName:'حساس درجة حرارة', severity:'med',
+    cause:'تلف حساس NTC الداخلي أو انقطاع في أسلاكه أو قراءة خاطئة بسبب الأوساخ.',
+    steps:['افصل الجهاز عن الكهرباء 5 دقائق ثم أعد التشغيل','قس مقاومة الحساس (يجب ~10kΩ عند 25°C)','نظف منطقة الحساس من الأوساخ','استبدل الحساس إذا كانت المقاومة خارج النطاق'],
+    note:'قيمة المقاومة تتغير مع الحرارة، استخدم جدول القيم للماركة' },
+
+  { brand:'samsung', code:'E2', name:'خطأ في حساس سخان التبخير', type:'sensor', typeName:'حساس درجة حرارة',severity:'med',
+    cause:'تلف حساس NTC عند لفائف التبخير أو حدوث تجمد في الكويل يسبب قراءة خاطئة.',
+    steps:['أوقف الجهاز وانتظر ذوبان الثلج (30 دقيقة)','افحص حساس التبخير بمقياس المقاومة','تأكد من كفاءة الغاز (الضغط الصحيح)','استبدل الحساس إذا تلف'],
+    note:'التجمد المتكرر قد يعني نقص غاز أو تسريب' },
+
+  { brand:'samsung', code:'E3', name:'خطأ حماية الضغط العالي', type:'refrigerant', typeName:'تبريد وغاز', severity:'high',
+    cause:'ضغط غاز عالٍ جداً بسبب لفائف خارجية متسخة أو مروحة خارجية معطلة أو زيادة شحن الغاز.',
+    steps:['أوقف الجهاز فوراً','افحص مروحة الوحدة الخارجية وتأكد من دورانها','نظف لفائف الكندنسر الخارجية','قس ضغط الغاز وأفرغ الزائد إن لزم','افحص صمام الضغط العالي'],
+    note:'لا تشغل الجهاز قبل معرفة السبب - خطر على الكمبروسور' },
+
+  { brand:'samsung', code:'E4', name:'حماية الضغط المنخفض / نقص الغاز', type:'refrigerant', typeName:'تبريد وغاز', severity:'high',
+    cause:'تسريب غاز مبرد أو انسداد في فلتر الجفاف أو عطل في صمام التمدد.',
+    steps:['افحص الوصلات والأنابيب بمحلول صابون','قس ضغط السحب (يجب ~7-8 bar لـ R410A)','إذا وُجد تسريب: إصلاحه وإعادة الشحن','تغيير فلتر الجفاف بعد الإصلاح'],
+    note:'يجب استخدام جهاز شحن غاز معتمد فقط' },
+
+  { brand:'samsung', code:'E5', name:'حماية التيار الزائد - الكمبروسور', type:'compressor', typeName:'كمبروسور', severity:'high',
+    cause:'تلف ملفات الكمبروسور أو ارتفاع الجهد الكهربائي أو ضغط زائد في الدارة.',
+    steps:['قس جهد الكهرباء الواصل (يجب 220V±10%)','افحص مكثف (كابسيتور) الكمبروسور','قس تيار الكمبروسور بكلاب أمبير','إذا كان التيار عالياً جداً: الكمبروسور تالف'],
+    note:'استبدال الكمبروسور يتطلب فني متخصص' },
+
+  { brand:'samsung', code:'E6', name:'عطل في التواصل بين الوحدتين', type:'communication', typeName:'اتصال', severity:'med',
+    cause:'قطع أو تأكسد في كابل الاتصال بين الوحدة الداخلية والخارجية.',
+    steps:['افحص سلك الاتصال (عادة 3-4 أسلاك) من الطرفين','نظف أطراف الاتصال من الصدأ','تأكد من الترتيب الصحيح للأسلاك','استبدل الكابل إذا وُجد قطع','في حالة استمرار المشكلة: فحص البورد'],
+    note:null },
+
+  { brand:'samsung', code:'E7', name:'عطل مروحة الوحدة الداخلية', type:'electric', typeName:'كهربائي', severity:'med',
+    cause:'تلف محرك مروحة الفان كويل أو مكثفه أو انقطاع في أسلاك التغذية.',
+    steps:['تحقق من دوران المروحة يدوياً (لا يجب أن تكون مقيدة)','افحص مكثف المروحة','قس تيار الموتور','استبدل الموتور أو المكثف حسب التشخيص'],
+    note:null },
+
+  { brand:'samsung', code:'E8', name:'حماية الحمل الزائد على المروحة الخارجية', type:'electric', typeName:'كهربائي', severity:'med',
+    cause:'تلف محرك المروحة الخارجية أو تعلق أجسام غريبة في المروحة.',
+    steps:['أوقف الجهاز وافصل الكهرباء','افحص المروحة من أجسام غريبة','دوّر المروحة يدوياً لفحص الحرية','قس التيار المسحوب من الموتور','استبدل الموتور إذا تلف'],
+    note:null },
+
+  { brand:'samsung', code:'E9', name:'خطأ حساس درجة حرارة الوحدة الخارجية', type:'sensor', typeName:'حساس درجة حرارة', severity:'low',
+    cause:'تلف حساس NTC في الوحدة الخارجية أو انقطاع في أسلاكه.',
+    steps:['افحص حساس الوحدة الخارجية بصرياً','قس مقاومته وقارنها بجدول القيم','استبدل الحساس إذا لزم'],
+    note:null },
+
+  // ===== LG =====
+  { brand:'lg', code:'CH01', name:'خطأ حساس الهواء الداخلي (درجة حرارة الغرفة)', type:'sensor', typeName:'حساس درجة حرارة', severity:'med',
+    cause:'تلف الحساس الحراري لقياس درجة حرارة الغرفة أو انقطاع في توصيلاته.',
+    steps:['أعد تشغيل الجهاز وانتظر دقيقتين','افحص الحساس ومقاومته (~10kΩ عند 25°C)','تأكد من سلامة الأسلاك','استبدل الحساس إذا تلف'],
+    note:null },
+
+  { brand:'lg', code:'CH02', name:'خطأ حساس درجة حرارة التبخير', type:'sensor', typeName:'حساس درجة حرارة', severity:'med',
+    cause:'تلف حساس لفائف التبخير الداخلية مما يمنع التحكم الصحيح في درجة الحرارة.',
+    steps:['افحص حساس الإيفاباريتر ومقاومته','تحقق من عدم وجود تجمد في اللفائف','نظف فلتر الهواء الداخلي','استبدل الحساس إذا لزم'],
+    note:null },
+
+  { brand:'lg', code:'CH03', name:'خطأ حساس درجة حرارة الوحدة الخارجية', type:'sensor', typeName:'حساس درجة حرارة', severity:'low',
+    cause:'تلف الحساس الحراري في الوحدة الخارجية.',
+    steps:['افحص الحساس ومقاومته','تأكد من الأسلاك والتوصيلات','استبدل الحساس'],
+    note:null },
+
+  { brand:'lg', code:'CH05', name:'عطل التواصل بين الوحدتين', type:'communication', typeName:'اتصال', severity:'med',
+    cause:'قطع أو تلف في كابل الاتصال أو تداخل كهربائي.',
+    steps:['افحص كابل الاتصال من الطرفين','تأكد من صحة التوصيل','استبدل الكابل','افحص البوردات إذا استمرت المشكلة'],
+    note:null },
+
+  { brand:'lg', code:'CH21', name:'حماية الضغط العالي', type:'refrigerant', typeName:'تبريد وغاز', severity:'high',
+    cause:'ضغط عالٍ في دارة الغاز بسبب كندنسر متسخ أو مروحة خارجية معطلة أو زيادة شحن.',
+    steps:['أوقف الجهاز فوراً','افحص ونظف الكندنسر الخارجي','تحقق من المروحة الخارجية','قس ضغط الغاز وأفرغ الزائد'],
+    note:'لا تشغل حتى يُحل السبب' },
+
+  { brand:'lg', code:'CH22', name:'حماية الضغط المنخفض / نقص غاز', type:'refrigerant', typeName:'تبريد وغاز', severity:'high',
+    cause:'نقص غاز المبرد بسبب تسريب أو انسداد في فلتر الجفاف.',
+    steps:['افحص الوصلات بمحلول صابون للكشف عن التسريب','أصلح التسريب','غير فلتر الجفاف','أعد شحن الغاز بالكمية الصحيحة'],
+    note:null },
+
+  { brand:'lg', code:'CH38', name:'عطل في مروحة الوحدة الخارجية', type:'electric', typeName:'كهربائي', severity:'med',
+    cause:'تلف موتور المروحة الخارجية أو مكثفها.',
+    steps:['افحص المروحة بصرياً','قس مقاومة ملفات الموتور','افحص المكثف','استبدل الموتور أو المكثف'],
+    note:null },
+
+  { brand:'lg', code:'CH44', name:'عطل في مستشعر الكمبروسور', type:'compressor', typeName:'كمبروسور', severity:'high',
+    cause:'عطل في حساس درجة حرارة خرج الكمبروسور أو ارتفاع درجة حرارة الكمبروسور.',
+    steps:['دع الجهاز يبرد 30 دقيقة','افحص حساس الكمبروسور','تأكد من كفاية الغاز','افحص الكمبروسور للتأكد من عدم وجود تلف'],
+    note:'ارتفاع حرارة الكمبروسور يقلل عمره الافتراضي' },
+
+  { brand:'lg', code:'CH67', name:'عطل إنفرتر الكمبروسور', type:'compressor', typeName:'كمبروسور', severity:'high',
+    cause:'تلف في لوحة الإنفرتر التي تتحكم في سرعة الكمبروسور.',
+    steps:['افحص الجهد الواصل للبورد','افحص الترانزستورات على بورد الإنفرتر','قس خرج الإنفرتر للكمبروسور','استبدل بورد الإنفرتر'],
+    note:'يتطلب فني متخصص في الإلكترونيات' },
+
+  // ===== GENERAL =====
+  { brand:'general', code:'E0', name:'خطأ EEPROM - ذاكرة البورد', type:'electric', typeName:'كهربائي', severity:'high',
+    cause:'تلف في شريحة ذاكرة البورد الرئيسية أو فقدان البيانات المحفوظة.',
+    steps:['أوقف الجهاز 10 دقائق كاملة','أعد التشغيل وراقب','إذا تكرر: يلزم استبدال البورد الرئيسية','تأكد من استقرار الجهد الكهربائي الواصل'],
+    note:'تذبذب الكهرباء يتلف الـ EEPROM' },
+
+  { brand:'general', code:'E1', name:'خطأ حساس درجة حرارة الغرفة', type:'sensor', typeName:'حساس درجة حرارة', severity:'med',
+    cause:'تلف الثرمستور الداخلي لقياس درجة حرارة الغرفة.',
+    steps:['افصل الجهاز وأعد تشغيله','افحص الحساس ومقاومته','استبدل الحساس إذا لزم'],
+    note:null },
+
+  { brand:'general', code:'E2', name:'خطأ حساس لفائف التبخير', type:'sensor', typeName:'حساس درجة حرارة', severity:'med',
+    cause:'تلف الثرمستور عند لفائف التبخير الداخلية.',
+    steps:['افحص الحساس ومقاومته','تأكد من عدم تجمد اللفائف','استبدل الحساس'],
+    note:null },
+
+  { brand:'general', code:'E3', name:'عطل مروحة الوحدة الداخلية', type:'electric', typeName:'كهربائي', severity:'med',
+    cause:'تلف موتور مروحة الفان كويل أو مكثفه أو مشكلة في الإشارة.',
+    steps:['تحقق من دوران المروحة','افحص مكثف الموتور','قس تيار الموتور','استبدل حسب التشخيص'],
+    note:null },
+
+  { brand:'general', code:'E4', name:'حماية الكمبروسور - ضغط عالٍ', type:'refrigerant', typeName:'تبريد وغاز', severity:'high',
+    cause:'الضغط العالي في الجانب الساخن من الدارة.',
+    steps:['أوقف الجهاز فوراً','نظف الكندنسر الخارجي','افحص مروحة الوحدة الخارجية','قس ضغط الغاز'],
+    note:'تأكد من عدم إعاقة تهوية الوحدة الخارجية' },
+
+  { brand:'general', code:'E5', name:'حماية التيار الزائد', type:'compressor', typeName:'كمبروسور', severity:'high',
+    cause:'ارتفاع تيار الكمبروسور بسبب تلفه أو ارتفاع الضغط.',
+    steps:['قس الجهد الكهربائي','افحص المكثف','قس تيار الكمبروسور بكلاب أمبير','إذا كان التيار عالياً جداً: الكمبروسور تالف'],
+    note:null },
+
+  { brand:'general', code:'E6', name:'عطل التواصل بين الوحدتين', type:'communication', typeName:'اتصال', severity:'med',
+    cause:'تلف أو انقطاع في كابل الاتصال.',
+    steps:['افحص الكابل بصرياً','تأكد من التوصيل الصحيح','استبدل الكابل إذا وُجد قطع','افحص البوردات'],
+    note:null },
+
+  { brand:'general', code:'E7', name:'خطأ حساس درجة حرارة الوحدة الخارجية', type:'sensor', typeName:'حساس درجة حرارة', severity:'low',
+    cause:'تلف الثرمستور في الوحدة الخارجية.',
+    steps:['افحص الحساس ومقاومته','استبدل الحساس'],
+    note:null },
+
+  { brand:'general', code:'E8', name:'حماية التجمد - الفروست', type:'refrigerant', typeName:'تبريد وغاز', severity:'med',
+    cause:'تجمد لفائف التبخير بسبب نقص غاز أو فلتر هواء متسخ أو ضعف المروحة.',
+    steps:['أوقف الجهاز وانتظر ذوبان الثلج (30 دقيقة)','نظف فلتر الهواء','افحص مستوى الغاز','تأكد من المروحة الداخلية'],
+    note:null },
+
+  // ===== HAIER =====
+  { brand:'haier', code:'E1', name:'خطأ حساس درجة حرارة الغرفة', type:'sensor', typeName:'حساس درجة حرارة', severity:'med',
+    cause:'قطع أو تلف في حساس NTC قياس درجة حرارة الغرفة.',
+    steps:['أعد التشغيل','افحص الحساس ومقاومته (10kΩ @ 25°C)','استبدل الحساس'],
+    note:null },
+
+  { brand:'haier', code:'E2', name:'خطأ حساس التبخير', type:'sensor', typeName:'حساس درجة حرارة', severity:'med',
+    cause:'تلف حساس لفائف الإيفاباريتر الداخلية.',
+    steps:['افحص الحساس','تأكد من عدم تجمد اللفائف','استبدل الحساس إذا لزم'],
+    note:null },
+
+  { brand:'haier', code:'E3', name:'حماية الضغط العالي', type:'refrigerant', typeName:'تبريد وغاز', severity:'high',
+    cause:'ضغط غاز عالٍ في الدارة بسبب كندنسر متسخ أو مروحة خارجية معطلة.',
+    steps:['أوقف الجهاز فوراً','نظف الكندنسر','افحص المروحة الخارجية','قس الضغط وأفرغ الزائد'],
+    note:null },
+
+  { brand:'haier', code:'E4', name:'حماية الضغط المنخفض / نقص غاز', type:'refrigerant', typeName:'تبريد وغاز', severity:'high',
+    cause:'نقص غاز المبرد بسبب تسريب.',
+    steps:['افحص التسريب','أصلحه','غير فلتر الجفاف','أعد الشحن'],
+    note:null },
+
+  { brand:'haier', code:'E5', name:'حماية التيار الزائد', type:'compressor', typeName:'كمبروسور', severity:'high',
+    cause:'ارتفاع تيار الكمبروسور.',
+    steps:['قس الجهد الكهربائي','افحص المكثف','قس تيار الكمبروسور','افحص الكمبروسور'],
+    note:null },
+
+  { brand:'haier', code:'E6', name:'عطل التواصل بين الوحدتين', type:'communication', typeName:'اتصال', severity:'med',
+    cause:'مشكلة في كابل أو بورد الاتصال.',
+    steps:['افحص الكابل','استبدله إذا لزم','افحص البوردات'],
+    note:null },
+
+  { brand:'haier', code:'E7', name:'عطل مروحة الوحدة الخارجية', type:'electric', typeName:'كهربائي', severity:'med',
+    cause:'تلف موتور المروحة الخارجية أو مكثفها.',
+    steps:['افحص المروحة يدوياً','افحص المكثف','استبدل الموتور أو المكثف'],
+    note:null },
+
+  { brand:'haier', code:'F1', name:'خطأ حساس درجة حرارة خرج الكمبروسور', type:'sensor', typeName:'حساس درجة حرارة', severity:'med',
+    cause:'تلف الحساس عند خرج الكمبروسور.',
+    steps:['افحص الحساس ومقاومته','استبدله إذا لزم'],
+    note:'قد يحمي الكمبروسور من الارتفاع الحراري' },
+
+  { brand:'haier', code:'F2', name:'حماية ارتفاع درجة حرارة الخرج', type:'compressor', typeName:'كمبروسور', severity:'high',
+    cause:'ارتفاع حرارة خرج الكمبروسور بسبب نقص غاز أو ضغط عالٍ.',
+    steps:['أوقف الجهاز وانتظر تبريده','افحص مستوى الغاز','افحص الضغط','نظف الكندنسر'],
+    note:'ارتفاع الحرارة يدمر الكمبروسور بسرعة' },
+
+  // ===== GÉANT / ARTICO =====
+  { brand:'geant', code:'E1', name:'خطأ حساس الهواء الداخلي', type:'sensor', typeName:'حساس درجة حرارة', severity:'med',
+    cause:'تلف أو قطع حساس قياس درجة حرارة الغرفة.',
+    steps:['أعد التشغيل','افحص الحساس ومقاومته','استبدله إذا لزم'],
+    note:null },
+
+  { brand:'geant', code:'E2', name:'خطأ حساس لفائف التبخير', type:'sensor', typeName:'حساس درجة حرارة', severity:'med',
+    cause:'تلف الثرمستور عند لفائف التبخير.',
+    steps:['افحص الحساس','نظف اللفائف من الغبار','استبدل الحساس'],
+    note:null },
+
+  { brand:'geant', code:'E3', name:'حماية الضغط العالي', type:'refrigerant', typeName:'تبريد وغاز', severity:'high',
+    cause:'ضغط عالٍ في دارة الغاز.',
+    steps:['أوقف الجهاز فوراً','نظف الكندنسر','افحص المروحة','قس الضغط'],
+    note:null },
+
+  { brand:'geant', code:'E4', name:'نقص غاز المبرد', type:'refrigerant', typeName:'تبريد وغاز', severity:'high',
+    cause:'تسريب في الوصلات أو الأنابيب.',
+    steps:['افحص التسريب بمحلول صابون','أصلح التسريب','غير فلتر الجفاف','اشحن الغاز'],
+    note:null },
+
+  { brand:'geant', code:'E5', name:'عطل في الكمبروسور', type:'compressor', typeName:'كمبروسور', severity:'high',
+    cause:'ارتفاع تيار أو حرارة الكمبروسور.',
+    steps:['افحص الجهد الكهربائي','قس تيار الكمبروسور','افحص المكثف','استبدل الكمبروسور إذا تلف'],
+    note:null },
+
+  { brand:'geant', code:'E6', name:'مشكلة تواصل الوحدتين', type:'communication', typeName:'اتصال', severity:'med',
+    cause:'انقطاع في كابل الاتصال بين الوحدة الداخلية والخارجية.',
+    steps:['افحص كابل الاتصال','استبدله إذا وُجد تلف','افحص بوردات التحكم'],
+    note:null },
+
+  { brand:'geant', code:'P1', name:'انقطاع الطاقة / جهد منخفض', type:'electric', typeName:'كهربائي', severity:'med',
+    cause:'انخفاض الجهد الكهربائي الواصل عن 190 فولت.',
+    steps:['قس الجهد الكهربائي','ركب مثبت جهد (Stabilizer) إذا كان الجهد غير مستقر','افحص الأسلاك والفيوزات'],
+    note:'الجهد الصحيح: 220V ± 10%' },
+
+  { brand:'geant', code:'P2', name:'حماية من درجة الحرارة العالية جداً', type:'compressor', typeName:'كمبروسور', severity:'high',
+    cause:'ارتفاع حرارة الجهاز بشكل مفرط.',
+    steps:['أوقف الجهاز وانتظر تبريده','تأكد من التهوية حول الوحدة الخارجية','نظف الكندنسر','افحص مستوى الغاز'],
+    note:null },
+];
+
+// ===================== LOGIC =====================
+let activeBrand = 'all';
+let activeType = 'all';
+
+const brandColors = { samsung:'#1428a0', lg:'#a50034', general:'#cc0000', haier:'#0072bc', geant:'#1a7a3c', other:'#6b21a8' };
+const typeClasses = { compressor:'tb-compressor', electric:'tb-electric', sensor:'tb-sensor', refrigerant:'tb-refrigerant', communication:'tb-communication', other:'tb-other' };
+const sevClasses = { high:'sev-high', med:'sev-med', low:'sev-low' };
+const sevLabels = { high:'خطورة عالية', med:'خطورة متوسطة', low:'خطورة منخفضة' };
+const typeLabels = { compressor:'⚙️ كمبروسور', electric:'⚡ كهربائي', sensor:'📡 حساس', refrigerant:'🧊 تبريد/غاز', communication:'📶 اتصال', other:'أخرى' };
+
+function getFiltered() {
+  const q = document.getElementById('searchInput').value.trim().toLowerCase();
+  return faults.filter(f => {
+    const bOk = activeBrand === 'all' || f.brand === activeBrand;
+    const tOk = activeType === 'all' || f.type === activeType;
+    const sOk = !q || f.code.toLowerCase().includes(q) || f.name.includes(q) || f.cause.includes(q) || f.typeName.includes(q);
+    return bOk && tOk && sOk;
+  });
+}
+
+function render() {
+  const data = getFiltered();
+  const grid = document.getElementById('grid');
+  const empty = document.getElementById('empty');
+  document.getElementById('visCount').textContent = data.length;
+
+  if (!data.length) { grid.innerHTML = ''; empty.style.display = 'block'; return; }
+  empty.style.display = 'none';
+
+  grid.innerHTML = data.map((f, i) => {
+    const bc = brandColors[f.brand] || brandColors.other;
+    const tc = typeClasses[f.type] || typeClasses.other;
+    const sc = sevClasses[f.severity] || '';
+    const tl = typeLabels[f.type] || f.typeName;
+    const sl = sevLabels[f.severity] || '';
+    const bn = f.brand.toUpperCase();
+    return `
+    <div class="card" style="animation-delay:${i*0.03}s" onclick="openModal(${faults.indexOf(f)})">
+      <div class="card-top">
+        <div class="code-wrap">
+          <div class="brand-dot dot-${f.brand}"></div>
+          <div class="code bg-${f.brand}">${f.code}</div>
+          <span style="font-size:11px;font-weight:700;color:${bc}">${bn}</span>
+        </div>
+        <div class="badges">
+          <span class="badge ${tc}">${tl}</span>
+          <span class="badge ${sc}">${sl}</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="fault-name">${f.name}</div>
+        <div class="info"><strong>السبب: </strong>${f.cause.length > 85 ? f.cause.substring(0,85)+'...' : f.cause}</div>
+      </div>
+      <div class="card-foot">
+        <div class="foot-label">✅ الحل</div>
+        ${f.steps[0]}${f.steps.length > 1 ? ' ...' : ''}
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function openModal(idx) {
+  const f = faults[idx];
+  const bc = brandColors[f.brand] || brandColors.other;
+  const tc = typeClasses[f.type] || typeClasses.other;
+  const sc = sevClasses[f.severity] || '';
+
+  document.getElementById('mCode').textContent = f.code;
+  document.getElementById('mCode').style.background = bc;
+  document.getElementById('mName').textContent = f.name;
+  document.getElementById('mBadges').innerHTML = `
+    <span class="badge ${tc}" style="margin-left:6px">${typeLabels[f.type]||f.typeName}</span>
+    <span class="badge ${sc}">${sevLabels[f.severity]||''}</span>
+    <span class="badge" style="background:#f1f5f9;color:#475569">${f.brand.toUpperCase()}</span>`;
+  document.getElementById('mTypeTxt').textContent = f.typeName;
+  document.getElementById('mCause').textContent = f.cause;
+  document.getElementById('mSteps').innerHTML = f.steps.map((s,i)=>`<li data-n="${i+1}">${s}</li>`).join('');
+
+  if (f.note) {
+    document.getElementById('mNoteSec').style.display = 'block';
+    document.getElementById('mNote').textContent = f.note;
+  } else {
+    document.getElementById('mNoteSec').style.display = 'none';
+  }
+
+  document.getElementById('overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeOverlay(e) { if (e.target === document.getElementById('overlay')) closeModal(); }
+function closeModal() { document.getElementById('overlay').classList.remove('open'); document.body.style.overflow = ''; }
+
+function setBrand(b, el) {
+  activeBrand = b;
+  document.querySelectorAll('.brand-tab').forEach(x => x.classList.remove('active'));
+  el.classList.add('active');
+  render();
+}
+
+function setType(t, el) {
+  activeType = t;
+  document.querySelectorAll('.type-btn').forEach(x => x.classList.remove('active'));
+  el.classList.add('active');
+  render();
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+document.getElementById('sTot').textContent = faults.length;
+render();
+</script>
+</body>
+</html>
