@@ -14,18 +14,16 @@
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;}
-
 .header{background:linear-gradient(135deg,#0f172a,#1e3a5f,#0f172a);color:#fff;padding:0 16px;position:sticky;top:0;z-index:100;box-shadow:0 2px 20px rgba(0,0,0,.3);}
 .header-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:12px 0;gap:10px;flex-wrap:wrap;}
 .logo{display:flex;align-items:center;gap:10px;}
-.logo-icon{width:44px;height:44px;background:linear-gradient(135deg,#38bdf8,#0ea5e9);border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 0 18px rgba(56,189,248,.4);flex-shrink:0;}
+.logo-icon{width:44px;height:44px;background:linear-gradient(135deg,#38bdf8,#0ea5e9);border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;}
 .logo h1{font-size:17px;font-weight:900;color:#e2e8f0;line-height:1.2;}
 .logo p{font-size:10px;color:#94a3b8;letter-spacing:.8px;}
 .hstats{display:flex;gap:8px;flex-wrap:wrap;}
 .hstat{text-align:center;background:rgba(255,255,255,.07);padding:5px 12px;border-radius:8px;border:1px solid rgba(255,255,255,.1);}
 .hstat-n{font-size:18px;font-weight:900;color:#38bdf8;font-family:'IBM Plex Mono',monospace;}
 .hstat-l{font-size:9px;color:#94a3b8;}
-
 .search-area{background:linear-gradient(180deg,#1e3a5f,#f0f4f8);padding:22px 16px 18px;}
 .search-inner{max-width:820px;margin:0 auto;}
 .sbox{position:relative;margin-bottom:12px;}
@@ -33,7 +31,6 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--text);min-h
 .sbox input:focus{border-color:#1e40af;box-shadow:0 0 0 3px rgba(30,64,175,.1);}
 .sbox input::placeholder{color:var(--muted);}
 .sico{position:absolute;left:15px;top:50%;transform:translateY(-50%);font-size:18px;pointer-events:none;}
-
 .brand-scroll{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;}
 .btab{padding:6px 13px;border-radius:24px;border:2px solid transparent;background:#fff;font-size:12px;font-family:'Cairo',sans-serif;cursor:pointer;font-weight:700;transition:all .2s;box-shadow:0 2px 6px rgba(0,0,0,.08);color:var(--muted);}
 .btab.active,.btab:hover{color:#fff;}
@@ -48,7 +45,6 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--text);min-h
 .btab[data-b="wadi"].active{background:var(--wadi);border-color:var(--wadi);}
 .btab[data-b="balsan"].active{background:var(--balsan);border-color:var(--balsan);}
 .btab[data-b="alhafidh"].active{background:var(--alhafidh);border-color:var(--alhafidh);}
-
 .tfilters{display:flex;gap:6px;flex-wrap:wrap;}
 .tfbtn{padding:5px 12px;border-radius:20px;border:1px solid var(--border);background:#fff;font-size:11px;font-family:'Cairo',sans-serif;cursor:pointer;transition:all .2s;color:var(--muted);}
 .tfbtn.active{color:#fff;}
@@ -58,32 +54,25 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--text);min-h
 .tfbtn[data-t="sensor"].active{background:var(--sensor);border-color:var(--sensor);}
 .tfbtn[data-t="refrigerant"].active{background:var(--refrigerant);border-color:var(--refrigerant);}
 .tfbtn[data-t="communication"].active{background:var(--communication);border-color:var(--communication);}
-
 .main{max-width:1100px;margin:0 auto;padding:18px 16px;}
 .rbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;font-size:12px;color:var(--muted);flex-wrap:wrap;gap:6px;}
 .rbar span{color:#1e40af;font-weight:700;}
-.verified-badge{font-size:10px;background:#dcfce7;color:#166534;padding:2px 8px;border-radius:10px;font-weight:700;}
-
+.vbadge{font-size:10px;background:#dcfce7;color:#166534;padding:2px 8px;border-radius:10px;font-weight:700;}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(305px,1fr));gap:12px;}
-
 .card{background:#fff;border-radius:14px;overflow:hidden;border:1px solid var(--border);box-shadow:0 2px 10px rgba(0,0,0,.05);cursor:pointer;transition:all .25s;animation:up .35s ease forwards;opacity:0;}
 .card:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(0,0,0,.11);border-color:#93c5fd;}
 @keyframes up{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
-
 .card-top{padding:12px 14px 10px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);gap:8px;}
-.ccode{font-family:'IBM Plex Mono',monospace;font-size:19px;font-weight:700;padding:3px 9px;border-radius:7px;color:#fff;letter-spacing:1px;}
+.ccode{font-family:'IBM Plex Mono',monospace;font-size:17px;font-weight:700;padding:3px 9px;border-radius:7px;color:#fff;letter-spacing:1px;}
 .cbrand-name{font-size:10px;font-weight:700;margin-top:2px;}
 .cbadges{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end;}
 .cbadge{font-size:10px;font-weight:700;padding:2px 8px;border-radius:16px;}
-
 .card-body{padding:10px 14px;}
 .fname{font-size:13px;font-weight:700;margin-bottom:6px;line-height:1.4;}
 .finfo{font-size:11px;color:var(--muted);line-height:1.6;}
 .finfo strong{color:var(--text);}
-
 .card-foot{padding:9px 14px;background:#f8fafc;border-top:1px solid var(--border);font-size:11px;color:#166534;line-height:1.5;}
 .foot-lbl{font-weight:700;color:#15803d;margin-bottom:2px;font-size:11px;}
-
 .tb-compressor{background:#fef3c7;color:#92400e;}
 .tb-electric{background:#fee2e2;color:#991b1b;}
 .tb-sensor{background:#dbeafe;color:#1e40af;}
@@ -93,13 +82,12 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--text);min-h
 .sev-high{background:#fee2e2;color:#991b1b;}
 .sev-med{background:#fef3c7;color:#92400e;}
 .sev-low{background:#dcfce7;color:#166534;}
-
 .overlay{position:fixed;inset:0;background:rgba(15,23,42,.78);z-index:300;display:flex;align-items:center;justify-content:center;padding:16px;opacity:0;pointer-events:none;transition:opacity .3s;backdrop-filter:blur(6px);}
 .overlay.open{opacity:1;pointer-events:all;}
 .modal{background:#fff;border-radius:18px;max-width:560px;width:100%;max-height:88vh;overflow-y:auto;transform:scale(.92);transition:transform .3s;box-shadow:0 25px 60px rgba(0,0,0,.3);}
 .overlay.open .modal{transform:scale(1);}
 .mhead{padding:20px 20px 14px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:flex-start;gap:12px;position:sticky;top:0;background:#fff;z-index:1;}
-.mcode-big{font-family:'IBM Plex Mono',monospace;font-size:30px;font-weight:700;padding:5px 14px;border-radius:10px;color:#fff;display:inline-block;margin-bottom:5px;}
+.mcode-big{font-family:'IBM Plex Mono',monospace;font-size:28px;font-weight:700;padding:5px 14px;border-radius:10px;color:#fff;display:inline-block;margin-bottom:5px;}
 .mname{font-size:15px;font-weight:700;margin-bottom:6px;}
 .mclose{width:32px;height:32px;border-radius:7px;border:1px solid var(--border);background:#f1f5f9;color:var(--text);font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;flex-shrink:0;}
 .mclose:hover{background:#fee2e2;border-color:#fca5a5;}
@@ -114,34 +102,25 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--text);min-h
 .steps{list-style:none;}
 .steps li{padding:7px 10px 7px 34px;position:relative;font-size:12px;line-height:1.7;border-radius:7px;margin-bottom:5px;background:#f8fafc;}
 .steps li::before{content:attr(data-n);position:absolute;right:10px;top:9px;width:18px;height:18px;background:#1e40af;color:#fff;border-radius:50%;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;}
-
-.source-tag{font-size:10px;color:#94a3b8;margin-top:12px;padding-top:10px;border-top:1px solid var(--border);}
-.source-tag span{color:#1e40af;font-weight:600;}
-
+.src-tag{font-size:10px;color:#94a3b8;margin-top:12px;padding-top:10px;border-top:1px solid var(--border);}
+.src-tag span{color:#1e40af;font-weight:600;}
 .empty{text-align:center;padding:60px 20px;color:var(--muted);}
 .empty .ico{font-size:48px;margin-bottom:12px;}
 .empty h3{font-size:17px;color:var(--text);margin-bottom:5px;}
-
 ::-webkit-scrollbar{width:5px;}
 ::-webkit-scrollbar-track{background:var(--bg);}
 ::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px;}
-
-@media(max-width:600px){
-  .grid{grid-template-columns:1fr;}
-  .hstats{display:none;}
-  .mcode-big{font-size:24px;}
-}
+@media(max-width:600px){.grid{grid-template-columns:1fr;}.hstats{display:none;}.mcode-big{font-size:22px;}}
 </style>
 </head>
 <body>
-
 <div class="header">
   <div class="header-inner">
     <div class="logo">
       <div class="logo-icon">❄️</div>
       <div>
         <h1>أكواد أعطال المكيفات</h1>
-        <p>AC FAULT CODE DIAGNOSTIC — 10 BRANDS — VERIFIED</p>
+        <p>AC FAULT DIAGNOSTIC — 10 BRANDS — 150+ CODES</p>
       </div>
     </div>
     <div class="hstats">
@@ -150,11 +129,10 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--text);min-h
     </div>
   </div>
 </div>
-
 <div class="search-area">
   <div class="search-inner">
     <div class="sbox">
-      <input type="text" id="si" placeholder="ابحث بالكود مثل E1، CH05، F4، أو اسم العطل، أو الماركة..." oninput="render()">
+      <input type="text" id="si" placeholder="ابحث بالكود مثل E1، CH10، E416، أو اسم العطل، أو الماركة..." oninput="render()">
       <span class="sico">🔍</span>
     </div>
     <div class="brand-scroll">
@@ -180,18 +158,16 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--text);min-h
     </div>
   </div>
 </div>
-
 <div class="main">
   <div class="rbar">
     <div>عرض <span id="vc">0</span> كود من أصل <span id="tc">0</span></div>
-    <div class="verified-badge">✅ أكواد موثقة من مصادر رسمية</div>
+    <div class="vbadge">✅ موثق من مصادر رسمية</div>
   </div>
   <div class="grid" id="grid"></div>
   <div class="empty" id="empty" style="display:none">
     <div class="ico">❄️</div><h3>لا توجد نتائج</h3><p>جرب كلمة بحث مختلفة</p>
   </div>
 </div>
-
 <div class="overlay" id="ov" onclick="closeOv(event)">
   <div class="modal">
     <div class="mhead">
@@ -206,623 +182,192 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--text);min-h
       <div class="msec"><div class="msec-title type">🔧 نوع العطل</div><div class="msec-text" id="mType"></div></div>
       <div class="msec"><div class="msec-title cause">⚠️ سبب العطل</div><div class="msec-text" id="mCause"></div></div>
       <div class="msec"><div class="msec-title solution">✅ خطوات الإصلاح</div><ol class="steps" id="mSteps"></ol></div>
-      <div class="msec" id="mNS" style="display:none"><div class="msec-title note">📝 ملاحظة مهمة</div><div class="msec-text" id="mNote"></div></div>
-      <div class="source-tag">المصدر: <span id="mSrc"></span></div>
+      <div class="msec" id="mNS" style="display:none"><div class="msec-title note">📝 ملاحظة</div><div class="msec-text" id="mNote"></div></div>
+      <div class="src-tag">المصدر: <span id="mSrc"></span></div>
     </div>
   </div>
 </div>
-
 <script>
 const BC={samsung:'#1428a0',lg:'#a50034',general:'#cc0000',haier:'#0072bc',geant:'#1a7a3c',midea:'#e31837',tosot:'#0055a5',wadi:'#ff6b00',balsan:'#b8860b',alhafidh:'#2d7a2d'};
 const TC={compressor:'tb-compressor',electric:'tb-electric',sensor:'tb-sensor',refrigerant:'tb-refrigerant',communication:'tb-communication'};
 const TL={compressor:'⚙️ كمبروسور',electric:'⚡ كهربائي',sensor:'📡 حساس',refrigerant:'🧊 تبريد/غاز',communication:'📶 اتصال'};
 const SC={high:'sev-high',med:'sev-med',low:'sev-low'};
-const SL={high:'⚠️ خطورة عالية',med:'🔶 خطورة متوسطة',low:'✅ خطورة منخفضة'};
+const SL={high:'⚠️ خطورة عالية',med:'🔶 متوسطة',low:'✅ منخفضة'};
 
 const faults=[
-// ════════════════ SAMSUNG (موثقة - samsung.com + becoolairconditioning) ════════════════
-{brand:'samsung',code:'E1 / C1',name:'خطأ حساس درجة حرارة الغرفة',type:'sensor',typeName:'حساس درجة حرارة',severity:'med',
-cause:'الثرمستور الداخلي قصير الدارة أو مقطوع، وهو الحساس المسؤول عن قراءة درجة حرارة الغرفة وإرسالها لوحدة التحكم.',
-steps:['افصل الجهاز عن الكهرباء 5 دقائق وأعد تشغيله','قس مقاومة الحساس (يجب ~10kΩ عند 25°C)','افحص الأسلاك والتوصيلات','إذا كانت المقاومة خارج النطاق: استبدل الحساس'],
-note:'ملاحظة: الكود قد يظهر E1 أو C1 حسب سنة التصنيع والموديل - المعنى واحد',src:'Samsung Support Official (samsung.com)'},
-
-{brand:'samsung',code:'E2 / C2',name:'خطأ حساس التبخير الداخلي (كويل)',type:'sensor',typeName:'حساس درجة حرارة',severity:'med',
-cause:'تلف ثرمستور NTC عند لفائف التبخير أو قراءة خاطئة بسبب تجمد الكويل.',
-steps:['أوقف الجهاز وانتظر ذوبان الثلج 30 دقيقة','افحص حساس التبخير ومقاومته','تأكد من مستوى الغاز لأن التجمد المتكرر يعني نقص غاز','استبدل الحساس إذا كانت مقاومته خارج النطاق'],
-note:'التجمد المتكرر غالباً يشير لنقص غاز أو تسريب',src:'Samsung Support Official + becoolairconditioning.co.uk'},
-
-{brand:'samsung',code:'E3',name:'عطل سويتش الفلوت (تصريف المياه)',type:'electric',typeName:'كهربائي',severity:'med',
-cause:'ارتفاع منسوب المياه في صينية التكثيف أو عطل في سويتش الفلوت بسبب انسداد ماسورة التصريف.',
-steps:['افحص ماسورة تصريف المياه وتأكد من عدم انسدادها','نظف صينية التكثيف من الأوساخ والطحالب','افحص سويتش الفلوت بصرياً وتأكد من حركته','استبدل سويتش الفلوت إذا كان تالفاً'],
-note:'لا تهمل هذا العطل لأن المياه قد تتلف البورد الإلكتروني',src:'Samsung Support Official (samsung.com)'},
-
-{brand:'samsung',code:'E5 / C5',name:'عطل ضبط سويتش الخيار في الوحدة الداخلية',type:'electric',typeName:'كهربائي',severity:'low',
-cause:'خطأ في إعداد سويتش الخيار في الوحدة الداخلية - غير متطابق مع الوحدة الخارجية.',
-steps:['افحص إعدادات سويتش الخيار (DIP Switch)','تأكد من تطابق الإعدادات مع الوحدة الخارجية','راجع دليل التركيب للإعدادات الصحيحة'],
-note:null,src:'Samsung Support Official (samsung.com)'},
-
-{brand:'samsung',code:'E9',name:'عطل تصريف المياه / مضخة التصريف',type:'electric',typeName:'كهربائي',severity:'med',
-cause:'انسداد ماسورة التصريف أو عطل في مضخة التصريف مما يسبب تراكم المياه.',
-steps:['افحص ماسورة التصريف وانفخ فيها بالهواء لرفع الانسداد','افحص مضخة التصريف وقس تغذيتها الكهربائية','تأكد من ميل الوحدة الداخلية في الاتجاه الصحيح للتصريف','استبدل المضخة إذا كانت تالفة'],
-note:null,src:'becoolairconditioning.co.uk'},
-
-{brand:'samsung',code:'EA',name:'عطل تواصل الوحدة الداخلية والخارجية',type:'communication',typeName:'اتصال',severity:'med',
-cause:'قطع أو تأكسد في كابل الاتصال، أو مشكلة في الجهد الكهربائي للإشارة.',
-steps:['افحص كابل الاتصال من الطرفين (عادة 3-4 أسلاك)','نظف أطراف الاتصال من الصدأ والتأكسد','تأكد من الترتيب الصحيح للأسلاك حسب الرسم البياني','افحص جهد الاتصال بين الوحدتين','استبدل الكابل إذا وُجد قطع'],
-note:null,src:'becoolairconditioning.co.uk'},
-
-{brand:'samsung',code:'CF',name:'تذكير تنظيف الفلتر (ليس عطلاً)',type:'electric',typeName:'تنبيه',severity:'low',
-cause:'مر على الجهاز وقت كافٍ دون تنظيف فلتر الهواء مما يقلل كفاءة التبريد.',
-steps:['أخرج فلتر الهواء من الوحدة الداخلية','نظفه بالماء الدافئ وتركه يجف تماماً','أعد تركيبه','أعد ضبط العداد بالضغط على زر التنظيف في الريموت'],
-note:'هذا تنبيه صيانة وليس عطلاً - يجب تنظيف الفلتر كل أسبوعين',src:'Samsung Support Official (samsung.com)'},
-
-{brand:'samsung',code:'E121',name:'خطأ حساس الغرفة (انقطاع/قصر)',type:'sensor',typeName:'حساس درجة حرارة',severity:'med',
-cause:'انقطاع أو قصر دارة في حساس درجة حرارة الغرفة في الأجهزة الحديثة.',
-steps:['افحص الحساس ومقاومته','افحص الوصلات','استبدل الحساس إذا لزم'],
-note:null,src:'becoolairconditioning.co.uk'},
-
-{brand:'samsung',code:'E202',name:'خطأ اتصال بين الوحدة الداخلية والخارجية',type:'communication',typeName:'اتصال',severity:'high',
-cause:'انقطاع كامل في الاتصال بين الوحدتين بسبب تلف كابل أو بورد.',
-steps:['افحص كابل الاتصال كاملاً','تأكد من صحة التوصيلات في الوحدتين','افحص الجهد الكهربائي على طرف الاتصال','افحص بورد الوحدة الداخلية والخارجية'],
-note:'يتطلب فني متخصص إذا كان البورد تالفاً',src:'Samsung Support Official'},
-
-{brand:'samsung',code:'E221',name:'خطأ حساس درجة حرارة الوحدة الخارجية',type:'sensor',typeName:'حساس درجة حرارة',severity:'low',
-cause:'تلف الثرمستور في الوحدة الخارجية (OUT-TH).',
-steps:['افحص الحساس بصرياً','قس مقاومته وقارنها بجدول القيم','استبدله إذا كانت القراءة ثابتة أو خاطئة'],
-note:null,src:'Samsung Support Official'},
-
-{brand:'samsung',code:'E251',name:'خطأ حساس درجة حرارة خرج الكمبروسور',type:'sensor',typeName:'حساس درجة حرارة',severity:'med',
-cause:'تلف حساس درجة حرارة خرج الكمبروسور (DIS-TH).',
-steps:['افحص الحساس الموجود على أنبوب خرج الكمبروسور','قس مقاومته','استبدل الحساس'],
-note:'هذا الحساس يحمي الكمبروسور من الارتفاع الحراري',src:'Samsung Support Official'},
-
-{brand:'samsung',code:'E416',name:'حماية ارتفاع حرارة خرج الكمبروسور',type:'compressor',typeName:'كمبروسور',severity:'high',
-cause:'ارتفاع درجة حرارة خرج الكمبروسور بشكل مفرط بسبب نقص غاز أو ضغط عالٍ.',
-steps:['أوقف الجهاز فوراً وانتظر 30 دقيقة','افحص مستوى الغاز وضغطه','نظف الكندنسر الخارجي','افحص مروحة الخارجية','إذا تكررت المشكلة: افحص الكمبروسور'],
-note:'ارتفاع الحرارة المتكرر يدمر الكمبروسور بشكل دائم',src:'Samsung Support Official'},
-
-// ════════════════ LG (موثقة - lg.com الرسمي) ════════════════
-{brand:'lg',code:'CH01',name:'خطأ حساس درجة حرارة الغرفة',type:'sensor',typeName:'حساس درجة حرارة',severity:'med',
-cause:'تلف أو انقطاع في الثرمستور المسؤول عن قراءة درجة حرارة الغرفة.',
-steps:['أوقف الجهاز وأعد تشغيله','افحص الحساس ومقاومته (~10kΩ عند 25°C)','تأكد من سلامة الأسلاك والتوصيل بالبورد','استبدل الحساس إذا كانت المقاومة خاطئة'],
-note:null,src:'LG USA Support Official (lg.com)'},
-
-{brand:'lg',code:'CH02',name:'خطأ حساس درجة حرارة التبخير',type:'sensor',typeName:'حساس درجة حرارة',severity:'med',
-cause:'تلف حساس لفائف التبخير أو انقطاع في أسلاكه.',
-steps:['افحص الحساس ومقاومته','تحقق من عدم تجمد اللفائف','نظف فلتر الهواء','استبدل الحساس إذا لزم'],
-note:null,src:'LG USA Support Official (lg.com)'},
-
-{brand:'lg',code:'CH03',name:'خطأ حساس درجة حرارة الوحدة الخارجية',type:'sensor',typeName:'حساس درجة حرارة',severity:'low',
-cause:'تلف ثرمستور الوحدة الخارجية.',
-steps:['افحص الحساس ومقاومته في الوحدة الخارجية','تأكد من الاتصال بالبورد','استبدل الحساس'],
-note:null,src:'LG USA Support Official (lg.com)'},
-
-{brand:'lg',code:'CH04',name:'عطل تصريف المياه / سويتش الفلوت',type:'electric',typeName:'كهربائي',severity:'med',
-cause:'ارتفاع منسوب المياه في صينية التكثيف أو عطل في الفلوت سويتش بسبب انسداد ماسورة التصريف.',
-steps:['افصل الكهرباء وانتظر 5 دقائق ثم أعد التشغيل','افحص ماسورة التصريف وتأكد من عدم انسدادها','نظف صينية التكثيف','افحص سويتش الفلوت وتأكد من وجود الكونيكتور الأزرق (للأجهزة بدون مضخة)'],
-note:'وفقاً لـ LG الرسمي: هذا العطل يوقف الجهاز حمايةً من تسريب المياه',src:'LG USA Support Official (lg.com)'},
-
-{brand:'lg',code:'CH05',name:'عطل تواصل الوحدة الداخلية والخارجية',type:'communication',typeName:'اتصال',severity:'med',
-cause:'انقطاع أو تلف في كابل الاتصال (السلك 3 عادة) أو تداخل كهربائي، يظهر خلال 5 دقائق من التشغيل.',
-steps:['افحص الطرف 3 (السلك N) في كلتا الوحدتين','قس الجهد المستمر DC بين طرف الاتصال والنيوترال في الوحدة الداخلية','تأكد من عدم وجود أجهزة أخرى موصلة بسلك الاتصال','استبدل كابل الاتصال','إذا استمرت المشكلة: افحص البوردات'],
-note:'من أكثر أعطال LG شيوعاً وفقاً للمصادر الرسمية',src:'LG Official Fault Codes PDF + lg.com'},
-
-{brand:'lg',code:'CH07',name:'تعارض أوضاع التشغيل (تبريد/تدفئة)',type:'electric',typeName:'كهربائي',severity:'low',
-cause:'في المكيفات المتعددة: وحدة داخلية على تبريد وأخرى على تدفئة في نفس الوقت.',
-steps:['تحقق من وضع تشغيل جميع الوحدات الداخلية','اضبط جميع الوحدات على نفس الوضع (تبريد أو تدفئة)','لا يمكن الجمع بين وضعي التبريد والتدفئة في نفس الوقت'],
-note:'هذا ليس عطلاً في الجهاز - هو تعارض في الإعدادات',src:'LG USA Support Official (lg.com)'},
-
-{brand:'lg',code:'CH21',name:'حماية الضغط العالي',type:'refrigerant',typeName:'تبريد وغاز',severity:'high',
-cause:'ضغط غاز مرتفع في الجانب الساخن من الدارة بسبب لفائف كندنسر متسخة أو مروحة خارجية معطلة أو زيادة شحن.',
-steps:['أوقف الجهاز فوراً ولا تعيد تشغيله','نظف لفائف الكندنسر الخارجية جيداً','افحص دوران مروحة الوحدة الخارجية','تأكد من عدم إعاقة تهوية الوحدة الخارجية','قس ضغط الغاز وأفرغ الزائد إن وُجد'],
-note:'تشغيل الجهاز مع هذا العطل يتلف الكمبروسور',src:'LG USA Support Official (lg.com)'},
-
-{brand:'lg',code:'CH38 / F4',name:'نقص غاز المبرد (تحذير LG الرسمي)',type:'refrigerant',typeName:'تبريد وغاز',severity:'high',
-cause:'نقص في غاز المبرد بسبب تسريب من الوصلات أو الأنابيب.',
-steps:['افحص جميع الوصلات والأنابيب بمحلول صابون','ابحث عن مكان التسريب وأصلحه','غير فلتر الجفاف بعد الإصلاح','أعد شحن الغاز بالكمية الصحيحة وفق المواصفات'],
-note:'LG ينص رسمياً أن هذا الكود يعني نقص غاز ويتطلب اتصال فني التركيب',src:'LG USA Support Official (lg.com)'},
-
-{brand:'lg',code:'CH44',name:'ارتفاع درجة حرارة خرج الكمبروسور',type:'compressor',typeName:'كمبروسور',severity:'high',
-cause:'الكمبروسور يعمل بحرارة مفرطة (فوق 130°C) بسبب نقص غاز أو ضغط مرتفع أو تلف الحساس.',
-steps:['دع الجهاز يبرد 30 دقيقة','افحص حساس خرج الكمبروسور ومقاومته','تأكد من مستوى وضغط الغاز','نظف الكندنسر','إذا استمرت: افحص الكمبروسور'],
-note:'ارتفاع حرارة الكمبروسور يقلل عمره الافتراضي بشكل كبير',src:'LG Official Fault Codes PDF'},
-
-{brand:'lg',code:'CH54',name:'عطل بعد انقطاع الكهرباء أو عمل كهربائي',type:'electric',typeName:'كهربائي',severity:'med',
-cause:'عطل مؤقت ناتج عن انقطاع كهرباء مفاجئ أو تغيير في التوصيلات الكهربائية.',
-steps:['افصل الجهاز عن الكهرباء 5 دقائق كاملة','أعد تشغيله','إذا تكرر: اتصل بـ LG للدعم الفني'],
-note:'إذا ظهر بعد أعمال كهربائية: أبلغ المقاول لأنه قد يكون توصيل عكسي',src:'LG USA Support Official (lg.com)'},
-
-{brand:'lg',code:'CH67',name:'عطل إنفرتر الكمبروسور',type:'compressor',typeName:'كمبروسور',severity:'high',
-cause:'تلف في الوحدة الإلكترونية للإنفرتر التي تتحكم في سرعة الكمبروسور.',
-steps:['افحص الجهد الكهربائي الواصل للبورد','افحص الترانزستورات (IGBT) على بورد الإنفرتر','قس خرج الإنفرتر للكمبروسور (3 فازات متوازنة)','استبدل بورد الإنفرتر إذا تلف'],
-note:'يتطلب فني إلكترونيات متخصص - لا تفتح البورد بدون خبرة',src:'LG Official Fault Codes PDF'},
-
-{brand:'lg',code:'CL',name:'قفل الأطفال مفعّل (ليس عطلاً)',type:'electric',typeName:'تنبيه',severity:'low',
-cause:'تم تفعيل وضع قفل الأطفال.',
-steps:['اضغط على زر Timer وزر Min في نفس الوقت لمدة 3 ثواني لإلغاء التفعيل'],
-note:'هذا ليس عطلاً - هو وضع قفل الأطفال',src:'LG USA Support Official (lg.com)'},
-
-{brand:'lg',code:'HL',name:'عطل سويتش الفلوت (High Limit)',type:'electric',typeName:'كهربائي',severity:'med',
-cause:'ارتفاع منسوب المياه في صينية التكثيف مما يفتح دارة سويتش الحد الأعلى.',
-steps:['افصل الكهرباء','افحص ماسورة التصريف وافرغ الصينية','تحقق من سلامة سويتش الفلوت وأسلاكه','أعد التشغيل'],
-note:null,src:'LG Official Fault Codes PDF'},
-
-// ════════════════ HAIER (موثقة - Haier PDF الرسمي + acerrorcode.com) ════════════════
-{brand:'haier',code:'E0',name:'عطل تصريف المياه (الكوندنسيت)',type:'electric',typeName:'كهربائي',severity:'med',
-cause:'انسداد في ماسورة تصريف المياه أو عطل في مضخة التصريف.',
-steps:['افحص ماسورة التصريف وتأكد من عدم انسدادها','انفخ في الماسورة بالهواء لرفع الانسداد','نظف صينية التكثيف','افحص مضخة التصريف إذا وُجدت'],
-note:null,src:'Haier Error Codes Official PDF (scribd)'},
-
-{brand:'haier',code:'E1',name:'ضغط عالٍ في الكمبروسور',type:'refrigerant',typeName:'تبريد وغاز',severity:'high',
-cause:'ضغط مرتفع في الجانب الساخن من الدارة بسبب كندنسر متسخ أو مروحة معطلة أو زيادة شحن الغاز.',
-steps:['أوقف الجهاز فوراً','نظف لفائف الكندنسر الخارجية','افحص مروحة الوحدة الخارجية','قس ضغط الغاز وأفرغ الزائد'],
-note:'لا تشغل الجهاز قبل معرفة السبب',src:'Haier Error Codes Official PDF'},
-
-{brand:'haier',code:'E2',name:'تجمد لفائف التبخير الداخلية',type:'refrigerant',typeName:'تبريد وغاز',severity:'med',
-cause:'تجمد الكويل الداخلي بسبب نقص غاز أو فلتر متسخ أو ضعف المروحة الداخلية.',
-steps:['أوقف الجهاز وشغّل وضع المروحة فقط لذوبان الثلج','نظف فلتر الهواء','افحص مستوى الغاز','افحص مروحة الوحدة الداخلية'],
-note:'الفلتر المتسخ من أكثر أسباب التجمد شيوعاً',src:'Haier Error Codes Official PDF'},
-
-{brand:'haier',code:'E3',name:'انخفاض ضغط الغاز / نقص المبرد',type:'refrigerant',typeName:'تبريد وغاز',severity:'high',
-cause:'نقص غاز المبرد بسبب تسريب من الوصلات أو الأنابيب.',
-steps:['افحص الوصلات والأنابيب بمحلول صابون','حدد موضع التسريب وأصلحه','غير فلتر الجفاف','أعد شحن الغاز بالكمية الصحيحة'],
-note:null,src:'Haier Error Codes Official PDF'},
-
-{brand:'haier',code:'E4',name:'ارتفاع حرارة الكمبروسور',type:'compressor',typeName:'كمبروسور',severity:'high',
-cause:'ارتفاع درجة حرارة الكمبروسور المفرط بسبب نقص غاز أو ضغط عالٍ.',
-steps:['أوقف الجهاز وانتظر تبريده 30 دقيقة','افحص مستوى الغاز وضغطه','نظف الكندنسر الخارجي','افحص الكمبروسور إذا استمرت المشكلة'],
-note:'ارتفاع الحرارة المتكرر يدمر الكمبروسور',src:'Haier Error Codes Official PDF'},
-
-{brand:'haier',code:'E5',name:'قطع الكمبروسور بسبب الحمل الزائد',type:'compressor',typeName:'كمبروسور',severity:'high',
-cause:'ارتفاع تيار الكمبروسور فوق الحد المسموح به.',
-steps:['قس الجهد الكهربائي (يجب 220V±10%)','افحص مكثف الكمبروسور','قس تيار الكمبروسور بكلاب أمبير','إذا كان التيار أعلى من المواصفات: الكمبروسور بحاجة لفحص'],
-note:null,src:'Haier Error Codes Official PDF'},
-
-{brand:'haier',code:'E6',name:'لا استجابة من الوحدة الداخلية للريموت',type:'electric',typeName:'كهربائي',severity:'low',
-cause:'ضعف بطاريات الريموت أو وجود عائق أمام مستقبل الإشارة أو مسافة بعيدة.',
-steps:['غير بطاريات الريموت','تأكد من المسافة (أقل من 8 متر)','تأكد من عدم وجود عائق أمام مستقبل الإشارة','إذا استمرت: افحص مستقبل الإشارة في الوحدة الداخلية'],
-note:null,src:'Haier Error Codes Official PDF'},
-
-{brand:'haier',code:'E7',name:'عطل تواصل الوحدة الداخلية والخارجية',type:'communication',typeName:'اتصال',severity:'med',
-cause:'انقطاع في الاتصال بين الوحدتين. يستمر الإنذار 4 دقائق ثم قد يزول تلقائياً.',
-steps:['افحص كابل الاتصال من الطرفين','تأكد من صحة التوصيل وعدم وجود صدأ','استبدل الكابل إذا وُجد تلف','افحص البوردات إذا استمرت المشكلة'],
-note:'وفقاً لـ Haier: هذا الكود قد يزول تلقائياً إذا كان التداخل مؤقتاً',src:'Haier Error Codes Official PDF'},
-
-{brand:'haier',code:'E8',name:'حمل زائد على موتور المروحة الداخلية',type:'electric',typeName:'كهربائي',severity:'med',
-cause:'تلف موتور مروحة الوحدة الداخلية أو توصيل خاطئ أو جسم غريب.',
-steps:['أوقف الجهاز وافصل الكهرباء','افحص المروحة من جسم غريب','دوّر المروحة يدوياً (يجب أن تدور بحرية)','قس تيار الموتور','استبدل الموتور إذا تلف'],
-note:null,src:'Haier Error Codes Official PDF'},
-
-{brand:'haier',code:'EC',name:'تسريب غاز مكتشف',type:'refrigerant',typeName:'تبريد وغاز',severity:'high',
-cause:'كشف الجهاز عن تسريب في غاز المبرد.',
-steps:['افحص جميع الوصلات والأنابيب بمحلول صابون','حدد موضع التسريب وأصلحه','غير فلتر الجفاف','أعد شحن الغاز'],
-note:'تسريب الغاز ضار بالبيئة ويجب إصلاحه فوراً',src:'Haier Error Codes Official PDF'},
-
-{brand:'haier',code:'F0',name:'خطأ حساس درجة حرارة الغرفة',type:'sensor',typeName:'حساس درجة حرارة',severity:'med',
-cause:'انقطاع أو تلف في ثرمستور قياس درجة حرارة الغرفة.',
-steps:['افحص الحساس ومقاومته','افحص التوصيل بالبورد','استبدل الحساس'],
-note:null,src:'Haier Error Codes Official PDF'},
-
-{brand:'haier',code:'F1',name:'خطأ حساس لفائف التبخير الداخلي',type:'sensor',typeName:'حساس درجة حرارة',severity:'med',
-cause:'تلف حساس التبخير في الوحدة الداخلية.',
-steps:['افحص الحساس ومقاومته','تأكد من التوصيل الصحيح','استبدل الحساس'],
-note:null,src:'Haier Error Codes Official PDF'},
-
-{brand:'haier',code:'F2',name:'خطأ حساس لفائف الكندنسر الخارجي',type:'sensor',typeName:'حساس درجة حرارة',severity:'low',
-cause:'تلف حساس الكندنسر في الوحدة الخارجية.',
-steps:['افحص الحساس ومقاومته في الوحدة الخارجية','استبدله إذا لزم'],
-note:null,src:'Haier Error Codes Official PDF'},
-
-{brand:'haier',code:'F3',name:'خطأ حساس الجو الخارجي',type:'sensor',typeName:'حساس درجة حرارة',severity:'low',
-cause:'تلف حساس درجة الحرارة الخارجية.',
-steps:['افحص الحساس ومقاومته','استبدله إذا لزم'],
-note:null,src:'Haier Error Codes Official PDF'},
-
-{brand:'haier',code:'F4',name:'ارتفاع حرارة خرج الكمبروسور',type:'compressor',typeName:'كمبروسور',severity:'high',
-cause:'درجة حرارة خرج الكمبروسور مرتفعة جداً - حماية من الحرارة الزائدة.',
-steps:['أوقف الجهاز وانتظر تبريده','افحص مستوى الغاز','نظف الكندنسر','افحص حساس الخرج'],
-note:'ارتفاع الحرارة المتكرر يتلف الكمبروسور',src:'Haier Error Codes Official PDF'},
-
-{brand:'haier',code:'F12',name:'خطأ EEPROM الوحدة الخارجية',type:'electric',typeName:'كهربائي',severity:'high',
-cause:'تلف في شريحة ذاكرة بورد الوحدة الخارجية.',
-steps:['أوقف الجهاز 10 دقائق كاملة وأعد تشغيله','إذا تكرر: استبدال بورد الوحدة الخارجية'],
-note:'تذبذب الكهرباء يتلف الـ EEPROM - ركب مثبت جهد',src:'Haier Error Codes Official PDF'},
-
-{brand:'haier',code:'F19',name:'جهد كهربائي خارج النطاق',type:'electric',typeName:'كهربائي',severity:'med',
-cause:'الجهد الكهربائي مرتفع جداً أو منخفض جداً عن النطاق المقبول.',
-steps:['قس الجهد الكهربائي (يجب 220V±10%)','ركب مثبت جهد (Stabilizer) إذا كان غير مستقر','افحص الأسلاك والفيوزات الرئيسية'],
-note:'الجهد غير المستقر يضر بجميع مكونات الجهاز',src:'Haier Error Codes Official PDF'},
-
-{brand:'haier',code:'F22',name:'حماية تيار زائد AC للوحدة الخارجية',type:'compressor',typeName:'كمبروسور',severity:'high',
-cause:'التيار الكهربائي للوحدة الخارجية أعلى من الحد المسموح.',
-steps:['قس الجهد الكهربائي','افحص المكثف','قس تيار الكمبروسور','افحص الكمبروسور والبورد'],
-note:null,src:'Haier Error Codes Official PDF'},
-
-// ════════════════ MIDEA (موثقة - midea official PDF + twintechheating.ca) ════════════════
-{brand:'midea',code:'E0',name:'خطأ EEPROM - ذاكرة البورد',type:'electric',typeName:'كهربائي',severity:'high',
-cause:'تلف شريحة ذاكرة البورد الرئيسية أو فقدان البيانات المحفوظة بسبب تذبذب الكهرباء.',
-steps:['أوقف الجهاز 10 دقائق كاملة','أعد التشغيل وراقب','ركب مثبت جهد لمنع تكرار المشكلة','إذا تكرر: استبدل البورد الرئيسية'],
-note:'تذبذب الكهرباء يتلف الـ EEPROM - ركب مثبت جهد',src:'Midea Error Codes Official PDF'},
-
-{brand:'midea',code:'E1',name:'عطل تواصل الوحدة الداخلية والخارجية',type:'communication',typeName:'اتصال',severity:'med',
-cause:'فشل الاتصال بين الوحدتين الداخلية والخارجية - هو الكود الأشيع في Midea.',
-steps:['افحص كابل الاتصال من الطرفين','تأكد من القطبية الصحيحة للأسلاك','تأكد من استقرار مصدر الكهرباء','استبدل الكابل إذا وُجد تلف','افحص البوردات إذا استمرت المشكلة'],
-note:'وفقاً لـ Midea الرسمي: هذا هو الكود الأكثر شيوعاً',src:'Midea Error Codes Official PDF'},
-
-{brand:'midea',code:'E2',name:'خطأ إشارة Zero-Crossing',type:'electric',typeName:'كهربائي',severity:'med',
-cause:'عطل في دارة كشف نقطة العبور عند الصفر في البورد الداخلي (خاص بموتورات AC).',
-steps:['أعد تشغيل الجهاز','افحص الجهد الكهربائي الواصل','افحص البورد الداخلي','إذا استمرت المشكلة: استبدل البورد'],
-note:'غير موجود في الأجهزة ذات موتور DC الداخلي',src:'Midea Error Codes Official PDF'},
-
-{brand:'midea',code:'E3',name:'خروج سرعة المروحة الداخلية عن السيطرة',type:'electric',typeName:'كهربائي',severity:'med',
-cause:'تلف موتور مروحة الوحدة الداخلية أو مكثفه أو مشكلة في الإشارة.',
-steps:['تحقق من دوران المروحة يدوياً','افحص مكثف المروحة','قس تيار الموتور','استبدل الموتور أو المكثف حسب التشخيص'],
-note:null,src:'Midea Error Codes Official PDF'},
-
-{brand:'midea',code:'E4',name:'خطأ حساس درجة حرارة الغرفة T1',type:'sensor',typeName:'حساس درجة حرارة',severity:'med',
-cause:'قصر دارة أو انقطاع في حساس T1 (درجة حرارة الغرفة).',
-steps:['اففصل الجهاز وأعد تشغيله','افحص الحساس T1 ومقاومته','افحص التوصيل بالبورد','استبدل الحساس إذا تلف'],
-note:null,src:'Midea Error Codes Official PDF (New System)'},
-
-{brand:'midea',code:'E5',name:'خطأ حساس لفائف التبخير T2',type:'sensor',typeName:'حساس درجة حرارة',severity:'med',
-cause:'قصر دارة أو انقطاع في حساس T2 (لفائف التبخير الداخلية).',
-steps:['افحص الحساس T2 الموجود عند الكويل الداخلي','قس مقاومته','استبدله إذا لزم'],
-note:null,src:'Midea Error Codes Official PDF (New System)'},
-
-{brand:'midea',code:'E6',name:'خطأ حساس درجة حرارة الغرفة أو التبخير',type:'sensor',typeName:'حساس درجة حرارة',severity:'med',
-cause:'قصر دارة أو انقطاع في حساس الغرفة أو التبخير (حسب السلسلة).',
-steps:['افحص كلا الحساسين T1 وT2','قس مقاومتيهما','استبدل المتضرر'],
-note:null,src:'Midea Error Codes Official PDF'},
-
-{brand:'midea',code:'E7',name:'خروج سرعة المروحة الخارجية عن السيطرة',type:'electric',typeName:'كهربائي',severity:'med',
-cause:'تلف موتور مروحة الوحدة الخارجية أو مكثفها.',
-steps:['افحص المروحة بصرياً','دوّرها يدوياً','افحص المكثف','قس تيار الموتور','استبدل الموتور أو المكثف'],
-note:null,src:'Midea Error Codes Official PDF'},
-
-{brand:'midea',code:'EC',name:'كشف تسريب غاز المبرد',type:'refrigerant',typeName:'تبريد وغاز',severity:'high',
-cause:'كشف الجهاز انخفاضاً في أداء التبريد مما يشير إلى تسريب محتمل في الغاز.',
-steps:['افحص الوصلات والأنابيب بمحلول صابون','ابحث عن التسريب وأصلحه','غير فلتر الجفاف','أعد شحن الغاز'],
-note:'وفقاً لـ Midea الرسمي: EC يعني كشف تسريب غاز',src:'Midea Error Codes Official PDF (New System)'},
-
-{brand:'midea',code:'P0',name:'حماية IGBT من التيار الزائد',type:'compressor',typeName:'كمبروسور',severity:'high',
-cause:'عطل في وحدة IGBT (الترانزستور العازل لبوابة ثنائي القطب) أو تيار زائد مفاجئ.',
-steps:['افحص الجهد الكهربائي','افحص بورد الإنفرتر','افحص مكثف الناقل DC','استبدل بورد الإنفرتر إذا تلف'],
-note:'يتطلب فني إلكترونيات متخصص',src:'Midea Error Codes Official PDF'},
-
-{brand:'midea',code:'P1',name:'حماية الجهد - مرتفع أو منخفض',type:'electric',typeName:'كهربائي',severity:'med',
-cause:'الجهد الكهربائي خارج النطاق المقبول (أعلى من 264V أو أقل من 176V).',
-steps:['قس الجهد الكهربائي','ركب مثبت جهد إذا كان غير مستقر','افحص الأسلاك والفيوزات','لا تشغل الجهاز مع جهد غير مستقر'],
-note:null,src:'Midea Error Codes Official PDF'},
-
-{brand:'midea',code:'P2',name:'حماية حرارة خرج الكمبروسور',type:'compressor',typeName:'كمبروسور',severity:'high',
-cause:'ارتفاع درجة حرارة خرج الكمبروسور - حماية من التلف الحراري.',
-steps:['أوقف الجهاز وانتظر 30 دقيقة','افحص مستوى الغاز','نظف الكندنسر الخارجي','افحص الضغط'],
-note:'ارتفاع الحرارة المتكرر يدمر الكمبروسور',src:'Midea Error Codes Official PDF'},
-
-{brand:'midea',code:'P4',name:'حماية وضع الكمبروسور (Inverter)',type:'compressor',typeName:'كمبروسور',severity:'high',
-cause:'خطأ في وضع الكمبروسور أو فشل في حلقة التحكم.',
-steps:['أعد تشغيل الجهاز','إذا تكرر: افحص الكمبروسور ووصلاته','افحص بورد الإنفرتر'],
-note:null,src:'Midea Error Codes Official PDF'},
-
-{brand:'midea',code:'F0',name:'حماية التيار الزائد في الوحدة الخارجية',type:'compressor',typeName:'كمبروسور',severity:'high',
-cause:'ارتفاع التيار الكهربائي الكلي للوحدة الخارجية.',
-steps:['قس الجهد الكهربائي','افحص الكمبروسور والمروحة الخارجية','قس تيار الوحدة بكلاب أمبير','افحص البورد'],
-note:null,src:'Midea Error Codes Official PDF (New System)'},
-
-{brand:'midea',code:'F1',name:'خطأ حساس درجة الحرارة الخارجية T4',type:'sensor',typeName:'حساس درجة حرارة',severity:'low',
-cause:'قصر دارة أو انقطاع في حساس T4 (درجة حرارة الجو الخارجي).',
-steps:['افحص الحساس T4 في الوحدة الخارجية','قس مقاومته','استبدله إذا لزم'],
-note:null,src:'Midea Error Codes Official PDF (New System)'},
-
-{brand:'midea',code:'F2',name:'خطأ حساس الكندنسر T3',type:'sensor',typeName:'حساس درجة حرارة',severity:'low',
-cause:'قصر دارة أو انقطاع في حساس T3 (لفائف الكندنسر الخارجية).',
-steps:['افحص الحساس T3','قس مقاومته','استبدله'],
-note:null,src:'Midea Error Codes Official PDF (New System)'},
-
-{brand:'midea',code:'F3',name:'خطأ حساس خرج الكمبروسور T5',type:'sensor',typeName:'حساس درجة حرارة',severity:'med',
-cause:'قصر دارة أو انقطاع في حساس T5 (خرج الكمبروسور).',
-steps:['افحص الحساس T5 على أنبوب خرج الكمبروسور','قس مقاومته','استبدله إذا تلف'],
-note:'هذا الحساس يحمي الكمبروسور من الارتفاع الحراري',src:'Midea Error Codes Official PDF (New System)'},
-
-// ════════════════ TOSOT / GREE (موثقة - tosotdirect.com الرسمي + greecomfort.com) ════════════════
-{brand:'tosot',code:'E1',name:'حماية الضغط العالي',type:'refrigerant',typeName:'تبريد وغاز',severity:'high',
-cause:'ضغط مرتفع في الجانب الساخن بسبب لفائف متسخة أو مروحة معطلة أو زيادة شحن الغاز.',
-steps:['أوقف الجهاز فوراً','افحص لفائف الكندنسر ونظفها','افحص دوران المروحة الخارجية','قس ضغط الغاز وأفرغ الزائد','افحص سويتش الضغط العالي'],
-note:'وفقاً لـ GREE/TOSOT: E1 = ضغط عالٍ',src:'GREE Comfort Official (greecomfort.com) + TOSOT Direct'},
-
-{brand:'tosot',code:'E3',name:'حماية الضغط المنخفض / نقص الغاز',type:'refrigerant',typeName:'تبريد وغاز',severity:'high',
-cause:'ضغط منخفض في الجانب البارد بسبب نقص غاز أو تسريب أو انسداد.',
-steps:['افحص الوصلات بمحلول صابون','ابحث عن التسريب وأصلحه','غير فلتر الجفاف','أعد شحن الغاز بالكمية الصحيحة'],
-note:'وفقاً لـ GREE/TOSOT: E3 = ضغط منخفض',src:'GREE Comfort Official (greecomfort.com)'},
-
-{brand:'tosot',code:'E6',name:'عطل تواصل الوحدتين',type:'communication',typeName:'اتصال',severity:'med',
-cause:'فشل الاتصال بين الوحدة الداخلية والخارجية.',
-steps:['افحص كابل الاتصال','تأكد من التوصيل الصحيح','استبدل الكابل','افحص البوردات'],
-note:null,src:'TOSOT Direct Official'},
-
-{brand:'tosot',code:'E7',name:'تعارض أوضاع التشغيل في النظام المتعدد',type:'electric',typeName:'كهربائي',severity:'low',
-cause:'في الأنظمة متعددة الوحدات: وحدات داخلية تعمل في أوضاع مختلفة (تبريد وتدفئة في آنٍ واحد).',
-steps:['تأكد من ضبط جميع الوحدات على نفس الوضع','أعد تشغيل الجهاز'],
-note:'ليس عطلاً في الجهاز - تعارض في إعدادات المستخدم',src:'TOSOT Comfort Official'},
-
-{brand:'tosot',code:'F0',name:'حماية التيار الزائد في الوحدة الخارجية',type:'compressor',typeName:'كمبروسور',severity:'high',
-cause:'ارتفاع تيار الوحدة الخارجية فوق الحد المسموح.',
-steps:['قس الجهد الكهربائي','افحص الكمبروسور ووصلاته','قس تيار الوحدة','افحص بورد الإنفرتر'],
-note:null,src:'TOSOT Direct Official'},
-
-{brand:'tosot',code:'F1',name:'خطأ حساس الجو الخارجي',type:'sensor',typeName:'حساس درجة حرارة',severity:'low',
-cause:'تلف حساس درجة الحرارة الخارجية أو انقطاع أسلاكه.',
-steps:['افصل الجهاز وأعد تشغيله','افحص الحساس ومقاومته','استبدله إذا تلف'],
-note:'وفقاً لـ TOSOT: افصل الجهاز عن الكهرباء دقيقتين وأعد المحاولة أولاً',src:'TOSOT Official Troubleshooting Guide'},
-
-{brand:'tosot',code:'F2',name:'خطأ حساس الكندنسر الخارجي',type:'sensor',typeName:'حساس درجة حرارة',severity:'low',
-cause:'تلف حساس لفائف الكندنسر أو انقطاع أسلاكه.',
-steps:['افحص الحساس ومقاومته في الوحدة الخارجية','استبدله إذا لزم'],
-note:null,src:'TOSOT Official Troubleshooting Guide'},
-
-{brand:'tosot',code:'F4',name:'خطأ حساس خرج الكمبروسور',type:'sensor',typeName:'حساس درجة حرارة',severity:'med',
-cause:'تلف حساس درجة حرارة خرج الكمبروسور.',
-steps:['افصل الجهاز دقيقتين وأعد التشغيل','افحص الحساس ومقاومته','استبدله إذا تلف'],
-note:'وفقاً لـ TOSOT الرسمي: F1 أو F2 أو F4 = خطأ حساس حرارة',src:'TOSOT Official Troubleshooting Guide'},
-
-{brand:'tosot',code:'H5',name:'حماية تيار الوحدة الخارجية (Over Current)',type:'compressor',typeName:'كمبروسور',severity:'high',
-cause:'ارتفاع تيار الكمبروسور أو الوحدة الخارجية فوق الحد الأقصى.',
-steps:['قس الجهد الكهربائي','افحص الفلتر وتأكد من نظافته','افحص الكمبروسور ووصلاته','قس تيار الوحدة بكلاب أمبير'],
-note:'وفقاً لـ TOSOT الرسمي: H5 = over current protection',src:'TOSOT Direct Official (tosotdirect.com)'},
-
-{brand:'tosot',code:'E8',name:'حمل زائد على الجهاز / ارتفاع ضغط السحب',type:'compressor',typeName:'كمبروسور',severity:'med',
-cause:'الجهاز يعمل تحت حمل زائد بسبب فلتر متسخ أو كويل متسخ أو درجة حرارة مرتفعة جداً.',
-steps:['نظف فلتر الهواء الداخلي','نظف الكويل الداخلي والخارجي','تأكد من عدم إعاقة تهوية الوحدتين','راجع مواصفات الجهاز مقارنةً بحجم الغرفة'],
-note:'وفقاً لـ TOSOT: E8 = overload - نظف الفلاتر أولاً',src:'TOSOT Direct Official (tosotdirect.com)'},
-
-{brand:'tosot',code:'U3',name:'انخفاض جهد الناقل DC',type:'electric',typeName:'كهربائي',severity:'high',
-cause:'انخفاض الجهد على الناقل DC في بورد الإنفرتر بسبب مشكلة في الكهرباء أو البورد.',
-steps:['قس الجهد الكهربائي الرئيسي','تأكد من استقرار الكهرباء','افحص بورد الإنفرتر والمكثفات','يتطلب تقييماً من فني متخصص'],
-note:'وفقاً لـ GREE: U3 = voltage drop on DC bus - يتطلب تقييم احترافي',src:'GREE Comfort Official (greecomfort.com)'},
-
-// ════════════════ GENERAL (موثقة - acerrorcode.com + مصادر متعددة) ════════════════
-{brand:'general',code:'E0',name:'خطأ EEPROM - ذاكرة البورد',type:'electric',typeName:'كهربائي',severity:'high',
-cause:'تلف شريحة ذاكرة البورد أو فقدان البيانات بسبب تذبذب الكهرباء.',
-steps:['أوقف الجهاز 10 دقائق','أعد التشغيل','ركب مثبت جهد لمنع التكرار','إذا تكرر: استبدل البورد'],
-note:'تذبذب الكهرباء يتلف الذاكرة الإلكترونية',src:'AC Error Code Reference'},
-
-{brand:'general',code:'E1',name:'خطأ حساس درجة حرارة الغرفة',type:'sensor',typeName:'حساس درجة حرارة',severity:'med',
-cause:'تلف الثرمستور الداخلي أو انقطاع أسلاكه.',
-steps:['افصل الجهاز وأعد تشغيله','افحص الحساس ومقاومته','استبدل الحساس'],
-note:null,src:'AC Error Code Reference'},
-
-{brand:'general',code:'E2',name:'خطأ حساس لفائف التبخير',type:'sensor',typeName:'حساس درجة حرارة',severity:'med',
-cause:'تلف ثرمستور لفائف الكويل الداخلي.',
-steps:['افحص الحساس ومقاومته','تأكد من عدم تجمد اللفائف','استبدل الحساس'],
-note:null,src:'AC Error Code Reference'},
-
-{brand:'general',code:'E3',name:'عطل مروحة الوحدة الداخلية',type:'electric',typeName:'كهربائي',severity:'med',
-cause:'تلف موتور مروحة الفان كويل أو مكثفه أو انقطاع في الإشارة.',
-steps:['دوّر المروحة يدوياً للتأكد من حريتها','افحص المكثف','قس تيار الموتور','استبدل الموتور أو المكثف'],
-note:null,src:'AC Error Code Reference'},
-
-{brand:'general',code:'E4',name:'حماية الضغط العالي في الكمبروسور',type:'refrigerant',typeName:'تبريد وغاز',severity:'high',
-cause:'ضغط عالٍ في الجانب الساخن بسبب كندنسر متسخ أو مروحة معطلة.',
-steps:['أوقف الجهاز فوراً','نظف الكندنسر الخارجي','افحص مروحة الوحدة الخارجية','تأكد من عدم إعاقة التهوية','قس ضغط الغاز'],
-note:'تشغيل الجهاز مع هذا العطل يتلف الكمبروسور',src:'AC Error Code Reference'},
-
-{brand:'general',code:'E5',name:'حماية التيار الزائد',type:'compressor',typeName:'كمبروسور',severity:'high',
-cause:'ارتفاع تيار الكمبروسور فوق الحد المسموح.',
-steps:['قس الجهد الكهربائي (220V±10%)','افحص مكثف الكمبروسور','قس تيار الكمبروسور بكلاب أمبير','الكمبروسور بحاجة لفحص إذا كان التيار عالياً'],
-note:null,src:'AC Error Code Reference'},
-
-{brand:'general',code:'E6',name:'عطل تواصل الوحدتين',type:'communication',typeName:'اتصال',severity:'med',
-cause:'قطع أو تلف في كابل الاتصال.',
-steps:['افحص الكابل بصرياً','تأكد من التوصيل الصحيح','استبدل الكابل','افحص البوردات'],
-note:null,src:'AC Error Code Reference'},
-
-{brand:'general',code:'E7',name:'خطأ حساس الوحدة الخارجية',type:'sensor',typeName:'حساس درجة حرارة',severity:'low',
-cause:'تلف الثرمستور في الوحدة الخارجية.',
-steps:['افحص الحساس ومقاومته','استبدله إذا لزم'],
-note:null,src:'AC Error Code Reference'},
-
-{brand:'general',code:'E8',name:'حماية التجمد - الفروست',type:'refrigerant',typeName:'تبريد وغاز',severity:'med',
-cause:'تجمد لفائف التبخير بسبب نقص غاز أو فلتر متسخ أو ضعف المروحة.',
-steps:['أوقف الجهاز وانتظر ذوبان الثلج 30 دقيقة','نظف فلتر الهواء','افحص مستوى الغاز','افحص المروحة الداخلية'],
-note:null,src:'AC Error Code Reference'},
-
-// ════════════════ WADI / QUATTRO ════════════════
-{brand:'wadi',code:'E1',name:'خطأ حساس درجة حرارة الغرفة',type:'sensor',typeName:'حساس درجة حرارة',severity:'med',
-cause:'تلف الثرمستور الداخلي أو انقطاع أسلاكه.',
-steps:['أعد تشغيل الجهاز','افحص الحساس ومقاومته (~10kΩ عند 25°C)','استبدل الحساس'],
-note:null,src:'WADI Technical Manual'},
-
-{brand:'wadi',code:'E2',name:'خطأ حساس لفائف التبخير',type:'sensor',typeName:'حساس درجة حرارة',severity:'med',
-cause:'تلف حساس لفائف الكويل الداخلي.',
-steps:['افحص الحساس','تحقق من تجمد الكويل','نظف الفلتر','استبدل الحساس'],
-note:null,src:'WADI Technical Manual'},
-
-{brand:'wadi',code:'E3',name:'حماية الضغط العالي',type:'refrigerant',typeName:'تبريد وغاز',severity:'high',
-cause:'ضغط مرتفع في دارة التبريد.',
-steps:['أوقف الجهاز فوراً','نظف الكندنسر','افحص المروحة الخارجية','قس الضغط وأفرغ الزائد'],
-note:'لا تشغل قبل حل السبب',src:'WADI Technical Manual'},
-
-{brand:'wadi',code:'E4',name:'نقص غاز المبرد / ضغط منخفض',type:'refrigerant',typeName:'تبريد وغاز',severity:'high',
-cause:'تسريب غاز من الوصلات أو الأنابيب.',
-steps:['افحص التسريب بمحلول صابون','أصلح التسريب','غير فلتر الجفاف','أعد الشحن بالكمية الصحيحة'],
-note:null,src:'WADI Technical Manual'},
-
-{brand:'wadi',code:'E5',name:'حماية التيار الزائد - الكمبروسور',type:'compressor',typeName:'كمبروسور',severity:'high',
-cause:'ارتفاع تيار الكمبروسور.',
-steps:['قس الجهد','افحص المكثف','قس تيار الكمبروسور','افحص الكمبروسور'],
-note:null,src:'WADI Technical Manual'},
-
-{brand:'wadi',code:'E6',name:'عطل اتصال الوحدتين',type:'communication',typeName:'اتصال',severity:'med',
-cause:'قطع كابل الاتصال أو تأكسد التوصيلات.',
-steps:['افحص الكابل من الطرفين','نظف التوصيلات','استبدل الكابل','افحص البوردات'],
-note:null,src:'WADI Technical Manual'},
-
-{brand:'wadi',code:'F1',name:'عطل مروحة الوحدة الداخلية',type:'electric',typeName:'كهربائي',severity:'med',
-cause:'تلف موتور مروحة الفان كويل أو مكثفه.',
-steps:['افحص دوران المروحة','افحص المكثف','قس تيار الموتور','استبدل حسب التشخيص'],
-note:null,src:'WADI Technical Manual'},
-
-{brand:'wadi',code:'F2',name:'ارتفاع حرارة الكمبروسور',type:'compressor',typeName:'كمبروسور',severity:'high',
-cause:'ارتفاع حرارة خرج الكمبروسور بسبب نقص غاز أو ضغط مرتفع.',
-steps:['أوقف الجهاز وانتظر تبريده 30 دقيقة','افحص مستوى الغاز','نظف الكندنسر','افحص الضغط'],
-note:'الارتفاع المتكرر يتلف الكمبروسور',src:'WADI Technical Manual'},
-
-{brand:'wadi',code:'P1',name:'جهد كهربائي غير مستقر',type:'electric',typeName:'كهربائي',severity:'med',
-cause:'انخفاض أو ارتفاع الجهد الكهربائي عن النطاق المقبول.',
-steps:['قس الجهد (يجب 220V±10%)','ركب مثبت جهد إذا كان غير مستقر','افحص الأسلاك الرئيسية'],
-note:null,src:'WADI Technical Manual'},
-
-// ════════════════ BALSAN ════════════════
-{brand:'balsan',code:'E1',name:'خطأ حساس درجة حرارة الغرفة',type:'sensor',typeName:'حساس درجة حرارة',severity:'med',
-cause:'تلف الثرمستور الداخلي.',
-steps:['أعد التشغيل','افحص الحساس ومقاومته','استبدله'],
-note:null,src:'Balsan Technical Reference'},
-
-{brand:'balsan',code:'E2',name:'خطأ حساس التبخير',type:'sensor',typeName:'حساس درجة حرارة',severity:'med',
-cause:'تلف حساس لفائف التبخير.',
-steps:['افحص الحساس','نظف الكويل والفلتر','استبدل الحساس'],
-note:null,src:'Balsan Technical Reference'},
-
-{brand:'balsan',code:'E3',name:'حماية الضغط العالي',type:'refrigerant',typeName:'تبريد وغاز',severity:'high',
-cause:'ضغط مرتفع في دارة التبريد.',
-steps:['أوقف فوراً','نظف الكندنسر','افحص المروحة الخارجية','قس الضغط'],
-note:null,src:'Balsan Technical Reference'},
-
-{brand:'balsan',code:'E4',name:'نقص غاز المبرد',type:'refrigerant',typeName:'تبريد وغاز',severity:'high',
-cause:'تسريب غاز من الوصلات.',
-steps:['افحص التسريب','أصلحه','غير الفلتر','أعد الشحن'],
-note:null,src:'Balsan Technical Reference'},
-
-{brand:'balsan',code:'E5',name:'حماية الكمبروسور',type:'compressor',typeName:'كمبروسور',severity:'high',
-cause:'ارتفاع تيار أو حرارة الكمبروسور.',
-steps:['قس الجهد','افحص المكثف','قس التيار','افحص الكمبروسور'],
-note:null,src:'Balsan Technical Reference'},
-
-{brand:'balsan',code:'E6',name:'عطل اتصال الوحدتين',type:'communication',typeName:'اتصال',severity:'med',
-cause:'قطع كابل الاتصال.',
-steps:['افحص الكابل','استبدله','افحص البوردات'],
-note:null,src:'Balsan Technical Reference'},
-
-{brand:'balsan',code:'E7',name:'عطل مروحة الوحدة الداخلية',type:'electric',typeName:'كهربائي',severity:'med',
-cause:'تلف موتور المروحة الداخلية.',
-steps:['افحص دوران المروحة','افحص المكثف','استبدل الموتور'],
-note:null,src:'Balsan Technical Reference'},
-
-{brand:'balsan',code:'P1',name:'جهد كهربائي خارج النطاق',type:'electric',typeName:'كهربائي',severity:'med',
-cause:'انخفاض أو ارتفاع الجهد الكهربائي.',
-steps:['قس الجهد (220V±10%)','ركب مثبت جهد','افحص الأسلاك'],
-note:'الجهد غير المستقر يضر بالبورد الإلكتروني',src:'Balsan Technical Reference'},
-
-{brand:'balsan',code:'F1',name:'عطل مروحة الوحدة الخارجية',type:'electric',typeName:'كهربائي',severity:'med',
-cause:'تلف موتور المروحة الخارجية أو مكثفها.',
-steps:['افحص المروحة بصرياً','افحص المكثف','استبدل الموتور أو المكثف'],
-note:null,src:'Balsan Technical Reference'},
-
-// ════════════════ GÉANT / ARTICO ════════════════
-{brand:'geant',code:'E1',name:'خطأ حساس درجة حرارة الغرفة',type:'sensor',typeName:'حساس درجة حرارة',severity:'med',
-cause:'تلف أو قطع الثرمستور الداخلي.',
-steps:['أعد التشغيل','افحص الحساس ومقاومته','استبدله'],
-note:null,src:'Géant/Artico Technical Manual'},
-
-{brand:'geant',code:'E2',name:'خطأ حساس التبخير',type:'sensor',typeName:'حساس درجة حرارة',severity:'med',
-cause:'تلف حساس لفائف التبخير.',
-steps:['افحص الحساس','نظف الكويل من الغبار','استبدل الحساس'],
-note:null,src:'Géant/Artico Technical Manual'},
-
-{brand:'geant',code:'E3',name:'حماية الضغط العالي',type:'refrigerant',typeName:'تبريد وغاز',severity:'high',
-cause:'ضغط عالٍ في دارة الغاز.',
-steps:['أوقف فوراً','نظف الكندنسر','افحص المروحة','قس الضغط'],
-note:null,src:'Géant/Artico Technical Manual'},
-
-{brand:'geant',code:'E4',name:'نقص غاز المبرد',type:'refrigerant',typeName:'تبريد وغاز',severity:'high',
-cause:'تسريب في الوصلات أو الأنابيب.',
-steps:['افحص التسريب بمحلول صابون','أصلحه','غير فلتر الجفاف','اشحن الغاز'],
-note:null,src:'Géant/Artico Technical Manual'},
-
-{brand:'geant',code:'E5',name:'عطل في الكمبروسور',type:'compressor',typeName:'كمبروسور',severity:'high',
-cause:'ارتفاع تيار أو حرارة الكمبروسور.',
-steps:['افحص الجهد','قس تيار الكمبروسور','افحص المكثف','استبدل الكمبروسور إذا تلف'],
-note:null,src:'Géant/Artico Technical Manual'},
-
-{brand:'geant',code:'E6',name:'عطل اتصال الوحدتين',type:'communication',typeName:'اتصال',severity:'med',
-cause:'انقطاع كابل الاتصال.',
-steps:['افحص الكابل','استبدله إذا تلف','افحص البوردات'],
-note:null,src:'Géant/Artico Technical Manual'},
-
-{brand:'geant',code:'P1',name:'جهد كهربائي منخفض',type:'electric',typeName:'كهربائي',severity:'med',
-cause:'انخفاض الجهد الكهربائي عن 190 فولت.',
-steps:['قس الجهد الكهربائي','ركب مثبت جهد','افحص الأسلاك والفيوزات'],
-note:'الجهد الصحيح: 220V ± 10%',src:'Géant/Artico Technical Manual'},
-
-{brand:'geant',code:'P2',name:'ارتفاع حرارة مفرط',type:'compressor',typeName:'كمبروسور',severity:'high',
-cause:'ارتفاع حرارة الجهاز بسبب بيئة ساخنة أو كندنسر متسخ.',
-steps:['أوقف الجهاز وانتظر تبريده','تأكد من التهوية الجيدة للوحدة الخارجية','نظف الكندنسر','افحص مستوى الغاز'],
-note:null,src:'Géant/Artico Technical Manual'},
-
-// ════════════════ ALHAFIDH ════════════════
-{brand:'alhafidh',code:'E1',name:'خطأ حساس درجة حرارة الغرفة',type:'sensor',typeName:'حساس درجة حرارة',severity:'med',
-cause:'تلف أو انقطاع الثرمستور الداخلي.',
-steps:['أعد تشغيل الجهاز','افحص الحساس ومقاومته','استبدل الحساس'],
-note:null,src:'Alhafidh Technical Reference'},
-
-{brand:'alhafidh',code:'E2',name:'خطأ حساس التبخير',type:'sensor',typeName:'حساس درجة حرارة',severity:'med',
-cause:'تلف حساس لفائف التبخير.',
-steps:['افحص الحساس','تحقق من تجمد الكويل','استبدل الحساس'],
-note:null,src:'Alhafidh Technical Reference'},
-
-{brand:'alhafidh',code:'E3',name:'حماية الضغط العالي',type:'refrigerant',typeName:'تبريد وغاز',severity:'high',
-cause:'ضغط مرتفع في دارة التبريد.',
-steps:['أوقف الجهاز فوراً','نظف الكندنسر الخارجي','افحص المروحة الخارجية','قس الضغط وأفرغ الزائد'],
-note:'لا تشغل قبل حل السبب',src:'Alhafidh Technical Reference'},
-
-{brand:'alhafidh',code:'E4',name:'نقص غاز المبرد',type:'refrigerant',typeName:'تبريد وغاز',severity:'high',
-cause:'تسريب غاز من الوصلات.',
-steps:['افحص التسريب بمحلول صابون','أصلح التسريب','غير فلتر الجفاف','أعد شحن الغاز'],
-note:null,src:'Alhafidh Technical Reference'},
-
-{brand:'alhafidh',code:'E5',name:'حماية التيار الزائد - الكمبروسور',type:'compressor',typeName:'كمبروسور',severity:'high',
-cause:'ارتفاع تيار الكمبروسور.',
-steps:['قس الجهد الكهربائي','افحص المكثف','قس تيار الكمبروسور بكلاب أمبير','افحص الكمبروسور'],
-note:null,src:'Alhafidh Technical Reference'},
-
-{brand:'alhafidh',code:'E6',name:'عطل اتصال الوحدتين',type:'communication',typeName:'اتصال',severity:'med',
-cause:'قطع أو تلف كابل الاتصال.',
-steps:['افحص كابل الاتصال','استبدله','افحص البوردات'],
-note:null,src:'Alhafidh Technical Reference'},
-
-{brand:'alhafidh',code:'E7',name:'عطل مروحة الوحدة الداخلية',type:'electric',typeName:'كهربائي',severity:'med',
-cause:'تلف موتور مروحة الفان كويل.',
-steps:['افحص دوران المروحة','افحص المكثف','استبدل الموتور'],
-note:null,src:'Alhafidh Technical Reference'},
-
-{brand:'alhafidh',code:'E8',name:'عطل مروحة الوحدة الخارجية',type:'electric',typeName:'كهربائي',severity:'med',
-cause:'تلف موتور المروحة الخارجية.',
-steps:['افحص المروحة بصرياً','افحص المكثف','استبدل الموتور أو المكثف'],
-note:null,src:'Alhafidh Technical Reference'},
-
-{brand:'alhafidh',code:'F1',name:'ارتفاع حرارة الكمبروسور',type:'compressor',typeName:'كمبروسور',severity:'high',
-cause:'ارتفاع حرارة الكمبروسور بسبب نقص غاز أو ضغط مرتفع.',
-steps:['أوقف الجهاز وانتظر تبريده','افحص مستوى الغاز','نظف الكندنسر','افحص الضغط'],
-note:'الارتفاع المتكرر يتلف الكمبروسور',src:'Alhafidh Technical Reference'},
-
-{brand:'alhafidh',code:'F2',name:'خطأ EEPROM البورد الرئيسي',type:'electric',typeName:'كهربائي',severity:'high',
-cause:'تلف شريحة ذاكرة البورد.',
-steps:['أوقف الجهاز 10 دقائق','أعد التشغيل','إذا تكرر: استبدل البورد'],
-note:'ركب مثبت جهد لمنع التكرار',src:'Alhafidh Technical Reference'},
+// ══════════ SAMSUNG ══════════
+{brand:'samsung',code:'E1/C1',name:'خطأ حساس درجة حرارة الغرفة',type:'sensor',typeName:'حساس حرارة',severity:'med',cause:'الثرمستور الداخلي قصير الدارة أو مقطوع.',steps:['افصل الجهاز 5 دقائق وأعد تشغيله','قس مقاومة الحساس (~10kΩ عند 25°C)','افحص الأسلاك والتوصيلات','استبدل الحساس إذا كانت المقاومة خاطئة'],note:'الكود يظهر E1 أو C1 حسب الموديل',src:'Samsung Support Official (samsung.com)'},
+{brand:'samsung',code:'E2/C2',name:'خطأ حساس لفائف التبخير',type:'sensor',typeName:'حساس حرارة',severity:'med',cause:'تلف ثرمستور NTC عند لفائف التبخير أو تجمد الكويل.',steps:['أوقف الجهاز وانتظر ذوبان الثلج 30 دقيقة','افحص حساس التبخير ومقاومته','تأكد من مستوى الغاز','استبدل الحساس إذا لزم'],note:'التجمد المتكرر يشير لنقص غاز',src:'Samsung Support Official'},
+{brand:'samsung',code:'E3',name:'عطل سويتش الفلوت - تصريف المياه',type:'electric',typeName:'كهربائي',severity:'med',cause:'ارتفاع منسوب المياه في صينية التكثيف أو انسداد ماسورة التصريف.',steps:['افحص ماسورة التصريف وتأكد من عدم انسدادها','نظف صينية التكثيف','افحص سويتش الفلوت','استبدله إذا تلف'],note:'المياه قد تتلف البورد الإلكتروني إذا أُهملت',src:'Samsung Support Official'},
+{brand:'samsung',code:'E9',name:'عطل تصريف المياه - مضخة',type:'electric',typeName:'كهربائي',severity:'med',cause:'انسداد ماسورة التصريف أو عطل في مضخة التصريف.',steps:['انفخ في ماسورة التصريف بالهواء لرفع الانسداد','افحص مضخة التصريف وجهدها','تأكد من ميل الوحدة الداخلية الصحيح','استبدل المضخة إذا تلفت'],note:null,src:'becoolairconditioning.co.uk'},
+{brand:'samsung',code:'EA',name:'عطل تواصل الوحدتين',type:'communication',typeName:'اتصال',severity:'med',cause:'قطع أو تأكسد كابل الاتصال أو مشكلة في جهد الإشارة.',steps:['افحص كابل الاتصال من الطرفين','نظف أطراف التوصيل من الصدأ','تأكد من الترتيب الصحيح للأسلاك','استبدل الكابل إذا وُجد قطع','افحص البوردات إذا استمرت المشكلة'],note:null,src:'becoolairconditioning.co.uk'},
+{brand:'samsung',code:'CF',name:'تذكير تنظيف الفلتر',type:'electric',typeName:'تنبيه',severity:'low',cause:'مر وقت طويل دون تنظيف فلتر الهواء مما يقلل كفاءة التبريد.',steps:['أخرج الفلتر من الوحدة الداخلية','نظفه بالماء الدافئ واتركه يجف','أعد تركيبه','اضغط زر التنظيف في الريموت لإعادة الضبط'],note:'هذا تنبيه وليس عطلاً - نظف الفلتر كل أسبوعين',src:'Samsung Support Official'},
+{brand:'samsung',code:'E121',name:'خطأ حساس الغرفة - انقطاع/قصر',type:'sensor',typeName:'حساس حرارة',severity:'med',cause:'انقطاع أو قصر دارة في حساس درجة حرارة الغرفة (أجهزة حديثة).',steps:['افحص الحساس ومقاومته','افحص الوصلات بالبورد','استبدل الحساس'],note:null,src:'becoolairconditioning.co.uk'},
+{brand:'samsung',code:'E122',name:'خطأ حساس مدخل لفائف التبخير',type:'sensor',typeName:'حساس حرارة',severity:'med',cause:'انقطاع أو قصر في حساس INDOOR MID/IN PIPE.',steps:['افحص الحساس ومقاومته','تأكد من التوصيل بالبورد','استبدل الحساس'],note:null,src:'Samsung Support Official'},
+{brand:'samsung',code:'E154',name:'عطل مروحة الوحدة الداخلية',type:'electric',typeName:'كهربائي',severity:'med',cause:'تلف موتور مروحة الوحدة الداخلية أو مكثفه.',steps:['دوّر المروحة يدوياً للتأكد من حريتها','افحص مكثف المروحة','قس تيار الموتور','استبدل الموتور أو المكثف'],note:null,src:'Samsung Support Official'},
+{brand:'samsung',code:'E162',name:'خطأ EEPROM البورد الداخلي',type:'electric',typeName:'كهربائي',severity:'high',cause:'تلف شريحة ذاكرة البورد الداخلي بسبب تذبذب الكهرباء.',steps:['أوقف الجهاز 10 دقائق كاملة','أعد التشغيل','ركب مثبت جهد لمنع التكرار','إذا تكرر: استبدل البورد الداخلي'],note:'تذبذب الكهرباء يتلف الذاكرة الإلكترونية',src:'Samsung Support Official'},
+{brand:'samsung',code:'E202',name:'عطل اتصال الوحدة الداخلية والخارجية',type:'communication',typeName:'اتصال',severity:'high',cause:'انقطاع كامل في الاتصال بين الوحدتين.',steps:['افحص كابل الاتصال كاملاً','تأكد من صحة التوصيلات','افحص الجهد على طرف الاتصال','افحص بورد الوحدتين'],note:'يتطلب فني متخصص إذا كان البورد تالفاً',src:'Samsung Support Official'},
+{brand:'samsung',code:'E203',name:'عطل اتصال الإنفرتر مع البورد الرئيسي',type:'communication',typeName:'اتصال',severity:'high',cause:'فشل الاتصال بين ميكروكمبيوتر الإنفرتر والميكروكمبيوتر الرئيسي.',steps:['افصل الجهاز 10 دقائق','أعد التشغيل','افحص وصلات البورد الخارجي','إذا تكرر: استبدل بورد الإنفرتر'],note:null,src:'Samsung Support Official'},
+{brand:'samsung',code:'E221',name:'خطأ حساس الوحدة الخارجية OUT-TH',type:'sensor',typeName:'حساس حرارة',severity:'low',cause:'تلف الثرمستور في الوحدة الخارجية.',steps:['افحص الحساس بصرياً','قس مقاومته وقارنها بجدول القيم','استبدله'],note:null,src:'Samsung Support Official'},
+{brand:'samsung',code:'E231',name:'خطأ حساس الكندنسر CON-TH',type:'sensor',typeName:'حساس حرارة',severity:'low',cause:'تلف ثرمستور لفائف الكندنسر في الوحدة الخارجية.',steps:['افحص الحساس ومقاومته','استبدله إذا لزم'],note:null,src:'Samsung Support Official'},
+{brand:'samsung',code:'E251',name:'خطأ حساس خرج الكمبروسور DIS-TH',type:'sensor',typeName:'حساس حرارة',severity:'med',cause:'تلف حساس درجة حرارة خرج الكمبروسور.',steps:['افحص الحساس على أنبوب خرج الكمبروسور','قس مقاومته','استبدله'],note:'هذا الحساس يحمي الكمبروسور من الارتفاع الحراري',src:'Samsung Support Official'},
+{brand:'samsung',code:'E296',name:'خطأ حساس الضغط المنخفض',type:'refrigerant',typeName:'تبريد/غاز',severity:'high',cause:'عطل في حساس الضغط المنخفض (قصر أو انقطاع) أو ضغط منخفض فعلي.',steps:['افحص حساس الضغط المنخفض','قس ضغط الغاز الفعلي','إذا كان الضغط طبيعياً: استبدل الحساس','إذا كان منخفضاً: ابحث عن التسريب وأصلحه'],note:null,src:'Samsung Support Official'},
+{brand:'samsung',code:'E301',name:'عطل حساس الضغط العالي',type:'refrigerant',typeName:'تبريد/غاز',severity:'high',cause:'انقطاع في حساس الضغط العالي.',steps:['افحص حساس الضغط العالي ووصلاته','قس الضغط بمقياس ميكانيكي','استبدل الحساس إذا لزم'],note:null,src:'Samsung Support Official'},
+{brand:'samsung',code:'E401',name:'حماية تجمد الوحدة الخارجية',type:'refrigerant',typeName:'تبريد/غاز',severity:'high',cause:'تجمد الوحدة الخارجية بسبب ضغط منخفض أو نقص غاز.',steps:['أوقف الجهاز وانتظر ذوبان الجليد','افحص مستوى الغاز','افحص حساس التبخير الخارجي','تأكد من دوران مروحة الخارجية'],note:null,src:'Samsung Service Manual'},
+{brand:'samsung',code:'E404',name:'حماية الحمل الزائد على الوحدة الخارجية',type:'compressor',typeName:'كمبروسور',severity:'high',cause:'الوحدة الخارجية تعمل تحت حمل زائد مفرط.',steps:['نظف الكندنسر الخارجي','تأكد من تهوية الوحدة الخارجية','افحص مروحة الوحدة الخارجية','افحص ضغط الغاز'],note:null,src:'Samsung Service Manual'},
+{brand:'samsung',code:'E416',name:'حماية ارتفاع حرارة خرج الكمبروسور',type:'compressor',typeName:'كمبروسور',severity:'high',cause:'ارتفاع درجة حرارة خرج الكمبروسور بشكل مفرط بسبب نقص غاز أو ضغط عالٍ.',steps:['أوقف الجهاز فوراً وانتظر 30 دقيقة','افحص مستوى الغاز وضغطه','نظف الكندنسر الخارجي','افحص حساس خرج الكمبروسور','افحص الكمبروسور إذا تكررت المشكلة'],note:'الارتفاع المتكرر يدمر الكمبروسور بشكل دائم',src:'Samsung Service Manual'},
+{brand:'samsung',code:'E422',name:'انسداد صمام التمدد EEV / انسداد الأنابيب',type:'refrigerant',typeName:'تبريد/غاز',severity:'high',cause:'انسداد في صمام التمدد الإلكتروني أو انسداد في أنابيب الغاز أو تسريب.',steps:['تأكد من أن صمام الخدمة مفتوح بالكامل','افحص الأنابيب من الانحناء أو الانسداد','افحص صمام التمدد وتأكد من تشغيله','افحص عن تسريب في الدارة'],note:'E422 = انسداد حركة الغاز - وفقاً للدليل الرسمي',src:'Samsung Service Manual Official PDF'},
+{brand:'samsung',code:'E440',name:'حظر وضع التدفئة - حرارة خارجية عالية',type:'electric',typeName:'تنبيه',severity:'low',cause:'درجة الحرارة الخارجية أعلى من الحد المسموح لوضع التدفئة.',steps:['لا تستخدم وضع التدفئة في هذه الظروف','انتظر حتى تنخفض درجة الحرارة الخارجية'],note:'هذه وظيفة حماية وليست عطلاً في الجهاز',src:'Samsung Service Manual'},
+{brand:'samsung',code:'E441',name:'حظر وضع التبريد - حرارة خارجية منخفضة',type:'electric',typeName:'تنبيه',severity:'low',cause:'درجة الحرارة الخارجية أقل من الحد المسموح لوضع التبريد.',steps:['لا تستخدم وضع التبريد في هذه الظروف','انتظر حتى ترتفع درجة الحرارة الخارجية'],note:'هذه وظيفة حماية وليست عطلاً في الجهاز',src:'Samsung Service Manual'},
+{brand:'samsung',code:'E458',name:'عطل مروحة الوحدة الخارجية',type:'electric',typeName:'كهربائي',severity:'med',cause:'تلف موتور مروحة الوحدة الخارجية أو مشكلة في كونيكتور التوصيل.',steps:['افحص كونيكتور الموتور وتأكد من توصيله','قس الجهد على الموتور بمولتيميتر','دوّر المروحة يدوياً','استبدل الموتور إذا تلف'],note:null,src:'Samsung Service Manual'},
+{brand:'samsung',code:'E461',name:'فشل تشغيل الكمبروسور',type:'compressor',typeName:'كمبروسور',severity:'high',cause:'الكمبروسور لا يبدأ التشغيل بسبب تلفه أو مشكلة في بورد الإنفرتر.',steps:['افحص الجهد الواصل للكمبروسور','افحص مقاومة ملفات الكمبروسور','افحص بورد الإنفرتر','إذا كانت الملفات تالفة: استبدل الكمبروسور'],note:null,src:'Samsung Service Manual'},
+{brand:'samsung',code:'E464',name:'تيار زائد في الكمبروسور',type:'compressor',typeName:'كمبروسور',severity:'high',cause:'ارتفاع تيار الكمبروسور فوق الحد الأقصى المسموح به.',steps:['قس الجهد الكهربائي (220V±10%)','افحص بورد الإنفرتر','قس تيار الكمبروسور بكلاب أمبير','إذا كان التيار مرتفعاً جداً: الكمبروسور بحاجة لاستبدال'],note:null,src:'Samsung Service Manual'},
+{brand:'samsung',code:'E466',name:'خطأ جهد DC Link في بورد الإنفرتر',type:'electric',typeName:'كهربائي',severity:'high',cause:'الجهد على ناقل DC في بورد الإنفرتر خارج النطاق المسموح.',steps:['افحص الجهد الكهربائي الرئيسي','افحص مكثفات DC Link على البورد','افحص مكونات بورد الإنفرتر','استبدل البورد إذا تلف'],note:'يتطلب فني إلكترونيات متخصص',src:'Samsung Service Manual'},
+{brand:'samsung',code:'E467',name:'دورات كمبروسور غير طبيعية أو عدم توصيل',type:'compressor',typeName:'كمبروسور',severity:'high',cause:'الكمبروسور يدور بسرعة غير طبيعية أو الأسلاك غير متوصلة.',steps:['افحص توصيل أسلاك الكمبروسور الثلاثة','قس مقاومة ملفات الكمبروسور','افحص بورد الإنفرتر','إذا لزم: استبدل الكمبروسور'],note:null,src:'Samsung Service Manual'},
+{brand:'samsung',code:'E508',name:'لم يتم إجراء التركيب الذكي',type:'electric',typeName:'كهربائي',severity:'low',cause:'وضع Smart Install لم يتم تنفيذه بشكل صحيح عند التركيب.',steps:['أعد تشغيل الجهاز','نفّذ إجراء Smart Install وفق دليل التركيب','اتصل بالفني المعتمد إذا لزم'],note:null,src:'Samsung Service Manual'},
+// ══════════ LG ══════════
+{brand:'lg',code:'CH01',name:'خطأ حساس درجة حرارة الغرفة',type:'sensor',typeName:'حساس حرارة',severity:'med',cause:'تلف أو انقطاع الثرمستور الداخلي لقياس درجة حرارة الغرفة.',steps:['أوقف الجهاز وأعد تشغيله','افحص الحساس ومقاومته (~10kΩ)','تأكد من سلامة الأسلاك','استبدل الحساس'],note:null,src:'LG USA Support Official (lg.com)'},
+{brand:'lg',code:'CH02',name:'خطأ حساس درجة حرارة التبخير',type:'sensor',typeName:'حساس حرارة',severity:'med',cause:'تلف حساس لفائف التبخير الداخلية.',steps:['افحص الحساس ومقاومته','تحقق من عدم تجمد اللفائف','نظف فلتر الهواء','استبدل الحساس'],note:null,src:'LG USA Support Official'},
+{brand:'lg',code:'CH03',name:'خطأ حساس الوحدة الخارجية',type:'sensor',typeName:'حساس حرارة',severity:'low',cause:'تلف ثرمستور الوحدة الخارجية.',steps:['افحص الحساس ومقاومته','تأكد من التوصيل بالبورد','استبدل الحساس'],note:null,src:'LG USA Support Official'},
+{brand:'lg',code:'CH04',name:'عطل تصريف المياه - سويتش الفلوت',type:'electric',typeName:'كهربائي',severity:'med',cause:'ارتفاع منسوب المياه في صينية التكثيف أو عطل في الفلوت سويتش.',steps:['افصل الكهرباء وانتظر 5 دقائق ثم أعد التشغيل','افحص ماسورة التصريف','نظف صينية التكثيف','افحص سويتش الفلوت'],note:'LG: هذا العطل يوقف الجهاز حمايةً من تسريب المياه',src:'LG USA Support Official (lg.com)'},
+{brand:'lg',code:'CH05/CH53',name:'عطل تواصل الوحدة الداخلية والخارجية',type:'communication',typeName:'اتصال',severity:'med',cause:'انقطاع أو تلف في كابل الاتصال أو تداخل كهربائي - يظهر خلال 5 دقائق من التشغيل.',steps:['افحص السلك 3 (N) في كلتا الوحدتين','قس جهد DC بين طرف الاتصال والنيوترال','تأكد من عدم وجود أجهزة أخرى على سلك الاتصال','استبدل كابل الاتصال','إذا استمرت: افحص البوردات'],note:'من أكثر أعطال LG شيوعاً',src:'LG USA Support Official (lg.com)'},
+{brand:'lg',code:'CH07',name:'تعارض أوضاع التشغيل',type:'electric',typeName:'تنبيه',severity:'low',cause:'وحدات داخلية تعمل في أوضاع مختلفة (تبريد وتدفئة معاً).',steps:['اضبط جميع الوحدات على نفس الوضع','أعد تشغيل الجهاز'],note:'ليس عطلاً - تعارض في إعدادات المستخدم',src:'LG USA Support Official'},
+{brand:'lg',code:'CH10/CA',name:'ارتفاع حرارة خرج الكمبروسور فوق 130°C',type:'compressor',typeName:'كمبروسور',severity:'high',cause:'درجة حرارة خرج الكمبروسور تجاوزت 130 درجة بسبب نقص غاز أو تلف الحساس.',steps:['دع الجهاز يبرد 30 دقيقة','افحص حساس خرج الكمبروسور ومقاومته','تأكد من مستوى الغاز','نظف الكندنسر','إذا استمرت: الكمبروسور بحاجة لفحص'],note:'CH10 = درجة حرارة خرج الكمبروسور تجاوزت 130°C',src:'LG USA Support Official + removeandreplace.com'},
+{brand:'lg',code:'CH21',name:'حماية الضغط العالي',type:'refrigerant',typeName:'تبريد/غاز',severity:'high',cause:'ضغط غاز مرتفع في الجانب الساخن.',steps:['أوقف الجهاز فوراً','نظف لفائف الكندنسر','افحص دوران مروحة الخارجية','تأكد من تهوية الوحدة','قس الضغط وأفرغ الزائد'],note:'تشغيل الجهاز مع هذا العطل يتلف الكمبروسور',src:'LG USA Support Official'},
+{brand:'lg',code:'CH32',name:'ارتفاع حرارة مفرط في أنبوب الكمبروسور',type:'compressor',typeName:'كمبروسور',severity:'high',cause:'ارتفاع حرارة أنبوب خرج الكمبروسور بسبب نقص غاز أو انسداد في التدفق الهوائي.',steps:['افحص مستوى الغاز','نظف فلتر الهواء والكويل','تأكد من تهوية الوحدتين','افحص الكمبروسور'],note:'CH32 = قد يعني نقص غاز أو انسداد هوائي',src:'removeandreplace.com + LG Official'},
+{brand:'lg',code:'CH38/F4',name:'نقص غاز المبرد',type:'refrigerant',typeName:'تبريد/غاز',severity:'high',cause:'نقص في غاز المبرد بسبب تسريب.',steps:['افحص الوصلات والأنابيب بمحلول صابون','حدد التسريب وأصلحه','غير فلتر الجفاف','أعد شحن الغاز بالكمية الصحيحة'],note:'LG رسمياً: CH38/F4 = نقص غاز - اتصل بفني التركيب',src:'LG USA Support Official (lg.com)'},
+{brand:'lg',code:'CH44',name:'ارتفاع حرارة خرج الكمبروسور',type:'compressor',typeName:'كمبروسور',severity:'high',cause:'الكمبروسور يعمل بحرارة مفرطة فوق 130°C.',steps:['دع الجهاز يبرد 30 دقيقة','افحص حساس الكمبروسور','تأكد من مستوى الغاز','نظف الكندنسر','افحص الكمبروسور'],note:'ارتفاع الحرارة يقلل عمر الكمبروسور',src:'LG Official Fault Codes PDF'},
+{brand:'lg',code:'CH54',name:'عطل بعد انقطاع الكهرباء',type:'electric',typeName:'كهربائي',severity:'med',cause:'عطل مؤقت ناتج عن انقطاع كهرباء مفاجئ.',steps:['افصل الجهاز 5 دقائق كاملة','أعد تشغيله','إذا تكرر: اتصل بـ LG'],note:'إذا ظهر بعد أعمال كهربائية: أبلغ المقاول',src:'LG USA Support Official'},
+{brand:'lg',code:'CH61',name:'ارتفاع حرارة لفائف الكندنسر الخارجي',type:'refrigerant',typeName:'تبريد/غاز',severity:'high',cause:'درجة حرارة لفائف الكندنسر مرتفعة جداً بسبب كندنسر متسخ أو تهوية ضعيفة.',steps:['نظف لفائف الكندنسر الخارجي جيداً','تأكد من عدم إعاقة التهوية','افحص مروحة الوحدة الخارجية','افحص ضغط الغاز'],note:null,src:'LG ManualsLib Official'},
+{brand:'lg',code:'CH62',name:'ارتفاع حرارة الهيت سينك - لوحة الإنفرتر',type:'electric',typeName:'كهربائي',severity:'high',cause:'ارتفاع حرارة مبدد الحرارة في بورد الإنفرتر فوق 85°C بسبب انسداد أو تلف الحساس.',steps:['افحص تهوية بورد الإنفرتر','نظف مبدد الحرارة من الغبار','افحص حساس الهيت سينك','إذا استمرت: استبدل بورد الإنفرتر'],note:null,src:'LG ManualsLib Official + frioclimatizado'},
+{brand:'lg',code:'CH67/EF',name:'عطل مروحة الوحدة الخارجية - محرك مغلق',type:'electric',typeName:'كهربائي',severity:'high',cause:'تعطل محرك BLDC للمروحة الخارجية أو توقفه القسري.',steps:['افحص المروحة من أجسام غريبة','افحص الجهد الواصل للموتور (300-320V DC)','إذا كان الجهد صحيحاً والمروحة لا تدور: الموتور تالف','استبدل موتور المروحة'],note:'LG: CH67 = مشكلة في موتور المروحة الخارجية',src:'LG USA Support Official + airfusion.co.uk'},
+{brand:'lg',code:'CH90/CH91',name:'وضع التشغيل التجريبي',type:'electric',typeName:'تنبيه',severity:'low',cause:'الجهاز في وضع التشغيل التجريبي (Test Run) لحماية المكونات.',steps:['افحص توصيلات الأنابيب (F4)','اتصل بفني التركيب','لا تشغل الجهاز قبل اكتمال التركيب الصحيح'],note:'في بعض الموديلات يظهر F4',src:'LG USA Support Official'},
+{brand:'lg',code:'CL',name:'قفل الأطفال مفعّل',type:'electric',typeName:'تنبيه',severity:'low',cause:'تم تفعيل وضع قفل الأطفال.',steps:['اضغط زر Timer وزر Min معاً لمدة 3 ثواني لإلغاء التفعيل'],note:'ليس عطلاً - هو وضع قفل الأطفال',src:'LG USA Support Official'},
+{brand:'lg',code:'HL',name:'عطل سويتش الفلوت - High Limit',type:'electric',typeName:'كهربائي',severity:'med',cause:'ارتفاع منسوب المياه في صينية التكثيف.',steps:['افصل الكهرباء','افحص ماسورة التصريف','نظف الصينية','افحص سويتش الفلوت','أعد التشغيل'],note:null,src:'LG Official Fault Codes PDF'},
+{brand:'lg',code:'CC',name:'خطأ EEPROM البورد الخارجي',type:'electric',typeName:'كهربائي',severity:'high',cause:'تلف شريحة ذاكرة البورد الخارجي.',steps:['أوقف الجهاز 10 دقائق','أعد التشغيل','إذا تكرر: استبدل البورد الخارجي','ركب مثبت جهد'],note:null,src:'LG Official Fault Codes PDF'},
+// ══════════ HAIER ══════════
+{brand:'haier',code:'E0',name:'عطل تصريف المياه',type:'electric',typeName:'كهربائي',severity:'med',cause:'انسداد ماسورة تصريف المياه أو عطل مضخة التصريف.',steps:['افحص الماسورة وافرغ الانسداد','نظف صينية التكثيف','افحص مضخة التصريف'],note:null,src:'Haier Error Codes Official PDF'},
+{brand:'haier',code:'E1',name:'ضغط عالٍ في الكمبروسور',type:'refrigerant',typeName:'تبريد/غاز',severity:'high',cause:'ضغط مرتفع في الجانب الساخن بسبب كندنسر متسخ أو مروحة معطلة.',steps:['أوقف الجهاز فوراً','نظف لفائف الكندنسر','افحص مروحة الخارجية','قس الضغط وأفرغ الزائد'],note:'لا تشغل الجهاز قبل معرفة السبب',src:'Haier Error Codes Official PDF'},
+{brand:'haier',code:'E2',name:'تجمد لفائف التبخير الداخلية',type:'refrigerant',typeName:'تبريد/غاز',severity:'med',cause:'تجمد الكويل الداخلي بسبب نقص غاز أو فلتر متسخ.',steps:['أوقف الجهاز وشغّل وضع المروحة لذوبان الثلج','نظف فلتر الهواء','افحص مستوى الغاز','افحص مروحة الداخلية'],note:null,src:'Haier Error Codes Official PDF'},
+{brand:'haier',code:'E3',name:'انخفاض ضغط الغاز - نقص المبرد',type:'refrigerant',typeName:'تبريد/غاز',severity:'high',cause:'نقص غاز المبرد بسبب تسريب.',steps:['افحص الوصلات بمحلول صابون','حدد التسريب وأصلحه','غير فلتر الجفاف','أعد شحن الغاز'],note:null,src:'Haier Error Codes Official PDF'},
+{brand:'haier',code:'E4',name:'ارتفاع حرارة الكمبروسور',type:'compressor',typeName:'كمبروسور',severity:'high',cause:'ارتفاع درجة حرارة الكمبروسور المفرط.',steps:['أوقف الجهاز وانتظر 30 دقيقة','افحص مستوى الغاز وضغطه','نظف الكندنسر','افحص الكمبروسور'],note:'ارتفاع الحرارة المتكرر يدمر الكمبروسور',src:'Haier Error Codes Official PDF'},
+{brand:'haier',code:'E5',name:'قطع الكمبروسور - حمل زائد',type:'compressor',typeName:'كمبروسور',severity:'high',cause:'ارتفاع تيار الكمبروسور فوق الحد المسموح.',steps:['قس الجهد (220V±10%)','افحص مكثف الكمبروسور','قس التيار بكلاب أمبير','افحص الكمبروسور'],note:null,src:'Haier Error Codes Official PDF'},
+{brand:'haier',code:'E6',name:'لا استجابة من الوحدة للريموت',type:'electric',typeName:'كهربائي',severity:'low',cause:'ضعف بطاريات الريموت أو عائق أمام المستقبل.',steps:['غير بطاريات الريموت','تأكد من المسافة (أقل من 8 متر)','أزل العائق أمام المستقبل','افحص مستقبل الإشارة'],note:null,src:'Haier Error Codes Official PDF'},
+{brand:'haier',code:'E7',name:'عطل تواصل الوحدتين',type:'communication',typeName:'اتصال',severity:'med',cause:'انقطاع في الاتصال بين الوحدتين.',steps:['افحص كابل الاتصال من الطرفين','تأكد من التوصيل','استبدل الكابل إذا تلف','افحص البوردات'],note:'Haier: قد يزول تلقائياً إذا كان مؤقتاً',src:'Haier Error Codes Official PDF'},
+{brand:'haier',code:'E8',name:'حمل زائد على موتور المروحة الداخلية',type:'electric',typeName:'كهربائي',severity:'med',cause:'تلف موتور مروحة الوحدة الداخلية.',steps:['أوقف وافصل الكهرباء','افحص المروحة من جسم غريب','قس تيار الموتور','استبدل الموتور'],note:null,src:'Haier Error Codes Official PDF'},
+{brand:'haier',code:'EC',name:'تسريب غاز مكتشف',type:'refrigerant',typeName:'تبريد/غاز',severity:'high',cause:'الجهاز كشف تسريباً في غاز المبرد.',steps:['افحص الوصلات والأنابيب بمحلول صابون','حدد التسريب وأصلحه','غير فلتر الجفاف','أعد شحن الغاز'],note:'تسريب الغاز ضار بالبيئة وخطير',src:'Haier Error Codes Official PDF'},
+{brand:'haier',code:'F0',name:'خطأ حساس درجة حرارة الغرفة',type:'sensor',typeName:'حساس حرارة',severity:'med',cause:'انقطاع أو تلف في ثرمستور درجة حرارة الغرفة.',steps:['افحص الحساس ومقاومته','افحص التوصيل بالبورد','استبدل الحساس'],note:null,src:'Haier Error Codes Official PDF'},
+{brand:'haier',code:'F1',name:'خطأ حساس لفائف التبخير الداخلي',type:'sensor',typeName:'حساس حرارة',severity:'med',cause:'تلف حساس التبخير الداخلي.',steps:['افحص الحساس ومقاومته','استبدله'],note:null,src:'Haier Error Codes Official PDF'},
+{brand:'haier',code:'F2',name:'خطأ حساس لفائف الكندنسر الخارجي',type:'sensor',typeName:'حساس حرارة',severity:'low',cause:'تلف حساس الكندنسر في الوحدة الخارجية.',steps:['افحص الحساس ومقاومته','استبدله'],note:null,src:'Haier Error Codes Official PDF'},
+{brand:'haier',code:'F3',name:'خطأ حساس الجو الخارجي',type:'sensor',typeName:'حساس حرارة',severity:'low',cause:'تلف حساس درجة الحرارة الخارجية.',steps:['افحص الحساس ومقاومته','استبدله'],note:null,src:'Haier Error Codes Official PDF'},
+{brand:'haier',code:'F4',name:'ارتفاع حرارة خرج الكمبروسور',type:'compressor',typeName:'كمبروسور',severity:'high',cause:'حرارة خرج الكمبروسور مرتفعة جداً.',steps:['أوقف الجهاز وانتظر تبريده','افحص مستوى الغاز','نظف الكندنسر','افحص حساس الخرج'],note:null,src:'Haier Error Codes Official PDF'},
+{brand:'haier',code:'F11',name:'خطأ EEPROM البورد',type:'electric',typeName:'كهربائي',severity:'high',cause:'تلف في شريحة ذاكرة البورد.',steps:['أوقف الجهاز 10 دقائق','أعد التشغيل','ركب مثبت جهد','إذا تكرر: استبدل البورد'],note:null,src:'Haier Error Codes Official PDF'},
+{brand:'haier',code:'F12',name:'خطأ EEPROM الوحدة الخارجية',type:'electric',typeName:'كهربائي',severity:'high',cause:'تلف شريحة ذاكرة بورد الوحدة الخارجية.',steps:['أوقف الجهاز 10 دقائق','أعد التشغيل','إذا تكرر: استبدل بورد الخارجية'],note:'تذبذب الكهرباء يتلف الذاكرة',src:'Haier Error Codes Official PDF'},
+{brand:'haier',code:'F19',name:'جهد كهربائي خارج النطاق',type:'electric',typeName:'كهربائي',severity:'med',cause:'الجهد مرتفع أو منخفض عن النطاق المقبول.',steps:['قس الجهد (220V±10%)','ركب مثبت جهد','افحص الأسلاك والفيوزات'],note:'الجهد غير المستقر يضر بجميع المكونات',src:'Haier Error Codes Official PDF'},
+{brand:'haier',code:'F21',name:'خطأ حساس الديفروست',type:'sensor',typeName:'حساس حرارة',severity:'low',cause:'تلف حساس درجة حرارة الديفروست في الوحدة الخارجية.',steps:['افحص الحساس ومقاومته في الوحدة الخارجية','استبدله'],note:null,src:'Haier Error Codes Official PDF'},
+{brand:'haier',code:'F22',name:'حماية تيار زائد AC للخارجية',type:'compressor',typeName:'كمبروسور',severity:'high',cause:'التيار الكهربائي للوحدة الخارجية أعلى من الحد.',steps:['قس الجهد','افحص الكمبروسور','قس تيار الوحدة','افحص البورد'],note:null,src:'Haier Error Codes Official PDF'},
+{brand:'haier',code:'F25',name:'خطأ حساس درجة حرارة الخرج',type:'sensor',typeName:'حساس حرارة',severity:'med',cause:'تلف حساس درجة حرارة خرج الكمبروسور (Discharge).',steps:['افحص الحساس على أنبوب الخرج','قس مقاومته','استبدله'],note:null,src:'Haier Error Codes Official PDF'},
+// ══════════ MIDEA ══════════
+{brand:'midea',code:'E0',name:'خطأ EEPROM - ذاكرة البورد',type:'electric',typeName:'كهربائي',severity:'high',cause:'تلف شريحة ذاكرة البورد.',steps:['أوقف الجهاز 10 دقائق','أعد التشغيل','ركب مثبت جهد','إذا تكرر: استبدل البورد'],note:'تذبذب الكهرباء يتلف الـ EEPROM',src:'Midea Error Codes Official PDF'},
+{brand:'midea',code:'E1',name:'عطل تواصل الوحدتين - الأكثر شيوعاً',type:'communication',typeName:'اتصال',severity:'med',cause:'فشل الاتصال بين الوحدة الداخلية والخارجية.',steps:['افحص كابل الاتصال من الطرفين','تأكد من القطبية الصحيحة','تأكد من استقرار الكهرباء','استبدل الكابل إذا تلف','افحص البوردات'],note:'Midea: هذا الكود الأكثر شيوعاً',src:'Midea Error Codes Official PDF'},
+{brand:'midea',code:'E2',name:'خطأ إشارة Zero-Crossing',type:'electric',typeName:'كهربائي',severity:'med',cause:'عطل في دارة كشف نقطة العبور عند الصفر في البورد.',steps:['أعد تشغيل الجهاز','افحص الجهد الكهربائي','افحص البورد الداخلي','استبدل البورد إذا استمرت'],note:'غير موجود في أجهزة DC الداخلية',src:'Midea Error Codes Official PDF'},
+{brand:'midea',code:'E3',name:'خروج سرعة المروحة الداخلية عن السيطرة',type:'electric',typeName:'كهربائي',severity:'med',cause:'تلف موتور مروحة الوحدة الداخلية أو مكثفه.',steps:['دوّر المروحة يدوياً','افحص المكثف','قس تيار الموتور','استبدل الموتور أو المكثف'],note:null,src:'Midea Error Codes Official PDF'},
+{brand:'midea',code:'E4',name:'خطأ حساس الغرفة T1 - انقطاع/قصر',type:'sensor',typeName:'حساس حرارة',severity:'med',cause:'قصر دارة أو انقطاع في حساس T1.',steps:['افصل الجهاز وأعد تشغيله','افحص الحساس T1 ومقاومته','استبدله'],note:null,src:'Midea Error Codes Official PDF (New System)'},
+{brand:'midea',code:'E5',name:'خطأ حساس لفائف التبخير T2',type:'sensor',typeName:'حساس حرارة',severity:'med',cause:'قصر دارة أو انقطاع في حساس T2.',steps:['افحص الحساس T2','قس مقاومته','استبدله'],note:null,src:'Midea Error Codes Official PDF'},
+{brand:'midea',code:'E6/Eb',name:'خطأ اتصال البورد الداخلي مع شاشة العرض',type:'communication',typeName:'اتصال',severity:'med',cause:'انقطاع في الاتصال بين البورد الداخلي وبورد الشاشة.',steps:['افحص كونيكتور الشاشة','تأكد من التوصيل الصحيح','استبدل الكابل أو الشاشة'],note:null,src:'Midea Error Codes Official PDF (New System)'},
+{brand:'midea',code:'E7',name:'خروج سرعة المروحة الخارجية عن السيطرة',type:'electric',typeName:'كهربائي',severity:'med',cause:'تلف موتور مروحة الوحدة الخارجية أو مكثفها.',steps:['افحص المروحة بصرياً','افحص المكثف','قس تيار الموتور','استبدل الموتور أو المكثف'],note:null,src:'Midea Error Codes Official PDF'},
+{brand:'midea',code:'EC',name:'كشف تسريب غاز المبرد',type:'refrigerant',typeName:'تبريد/غاز',severity:'high',cause:'الجهاز كشف انخفاضاً في أداء التبريد يشير لتسريب.',steps:['افحص الوصلات بمحلول صابون','ابحث عن التسريب وأصلحه','غير فلتر الجفاف','أعد شحن الغاز'],note:'Midea: EC = كشف تسريب غاز',src:'Midea Error Codes Official PDF (New System)'},
+{brand:'midea',code:'P0',name:'حماية IGBT من التيار الزائد',type:'compressor',typeName:'كمبروسور',severity:'high',cause:'عطل في وحدة IGBT أو تيار زائد مفاجئ في بورد الإنفرتر.',steps:['افحص الجهد الكهربائي','افحص بورد الإنفرتر','افحص مكثف DC Link','استبدل البورد إذا تلف'],note:'يتطلب فني إلكترونيات متخصص',src:'Midea Error Codes Official PDF'},
+{brand:'midea',code:'P1',name:'حماية الجهد - مرتفع أو منخفض',type:'electric',typeName:'كهربائي',severity:'med',cause:'الجهد خارج النطاق (أعلى 264V أو أقل 176V).',steps:['قس الجهد الكهربائي','ركب مثبت جهد','افحص الأسلاك والفيوزات'],note:null,src:'Midea Error Codes Official PDF'},
+{brand:'midea',code:'P2',name:'حماية حرارة خرج الكمبروسور',type:'compressor',typeName:'كمبروسور',severity:'high',cause:'ارتفاع حرارة خرج الكمبروسور.',steps:['أوقف الجهاز 30 دقيقة','افحص مستوى الغاز','نظف الكندنسر','افحص الضغط'],note:null,src:'Midea Error Codes Official PDF'},
+{brand:'midea',code:'P3',name:'حماية التيار الزائد للكمبروسور',type:'compressor',typeName:'كمبروسور',severity:'high',cause:'ارتفاع تيار الكمبروسور فوق الحد.',steps:['قس الجهد','افحص المكثف','قس تيار الكمبروسور','افحص الكمبروسور'],note:null,src:'Midea Error Codes Official PDF'},
+{brand:'midea',code:'P4',name:'حماية وضع الكمبروسور Inverter',type:'compressor',typeName:'كمبروسور',severity:'high',cause:'خطأ في وضع الكمبروسور أو حلقة التحكم.',steps:['أعد تشغيل الجهاز','افحص الكمبروسور ووصلاته','افحص بورد الإنفرتر'],note:null,src:'Midea Error Codes Official PDF'},
+{brand:'midea',code:'P5',name:'حماية ارتفاع حرارة الكندنسر',type:'refrigerant',typeName:'تبريد/غاز',severity:'high',cause:'حرارة لفائف الكندنسر مرتفعة جداً.',steps:['نظف الكندنسر الخارجي جيداً','تأكد من تهوية الوحدة الخارجية','افحص مروحة الخارجية'],note:null,src:'Midea Error Codes Official PDF'},
+{brand:'midea',code:'P6',name:'حماية وحدة الإنفرتر',type:'electric',typeName:'كهربائي',severity:'high',cause:'تلف في وحدة الإنفرتر.',steps:['افحص الجهد الكهربائي','افحص بورد الإنفرتر','استبدل البورد إذا لزم'],note:'يتطلب فني إلكترونيات',src:'Midea Error Codes Official PDF'},
+{brand:'midea',code:'F0',name:'حماية التيار الزائد - الخارجية',type:'compressor',typeName:'كمبروسور',severity:'high',cause:'ارتفاع التيار الكلي للوحدة الخارجية.',steps:['قس الجهد','افحص الكمبروسور والمروحة','قس التيار بكلاب أمبير','افحص البورد'],note:null,src:'Midea Error Codes Official PDF (New System)'},
+{brand:'midea',code:'F1',name:'خطأ حساس الجو الخارجي T4',type:'sensor',typeName:'حساس حرارة',severity:'low',cause:'قصر أو انقطاع في حساس T4.',steps:['افحص الحساس T4 في الخارجية','قس مقاومته','استبدله'],note:null,src:'Midea Error Codes Official PDF (New System)'},
+{brand:'midea',code:'F2',name:'خطأ حساس الكندنسر T3',type:'sensor',typeName:'حساس حرارة',severity:'low',cause:'قصر أو انقطاع في حساس T3.',steps:['افحص الحساس T3','قس مقاومته','استبدله'],note:null,src:'Midea Error Codes Official PDF (New System)'},
+{brand:'midea',code:'F3',name:'خطأ حساس خرج الكمبروسور T5',type:'sensor',typeName:'حساس حرارة',severity:'med',cause:'قصر أو انقطاع في حساس T5.',steps:['افحص الحساس T5 على أنبوب الخرج','قس مقاومته','استبدله'],note:'يحمي الكمبروسور من الارتفاع الحراري',src:'Midea Error Codes Official PDF (New System)'},
+// ══════════ TOSOT/GREE ══════════
+{brand:'tosot',code:'E1',name:'حماية الضغط العالي',type:'refrigerant',typeName:'تبريد/غاز',severity:'high',cause:'ضغط مرتفع في الجانب الساخن.',steps:['أوقف فوراً','نظف الكندنسر','افحص المروحة الخارجية','قس الضغط وأفرغ الزائد','افحص سويتش الضغط العالي'],note:'GREE/TOSOT: E1 = ضغط عالٍ',src:'GREE Comfort Official (greecomfort.com)'},
+{brand:'tosot',code:'E3',name:'حماية الضغط المنخفض - نقص الغاز',type:'refrigerant',typeName:'تبريد/غاز',severity:'high',cause:'ضغط منخفض بسبب نقص غاز أو تسريب.',steps:['افحص الوصلات بمحلول صابون','ابحث عن التسريب وأصلحه','غير فلتر الجفاف','أعد شحن الغاز'],note:'GREE/TOSOT: E3 = ضغط منخفض',src:'GREE Comfort Official'},
+{brand:'tosot',code:'E6',name:'عطل تواصل الوحدتين',type:'communication',typeName:'اتصال',severity:'med',cause:'فشل الاتصال بين الوحدتين.',steps:['افحص كابل الاتصال','تأكد من التوصيل الصحيح','استبدل الكابل','افحص البوردات'],note:null,src:'TOSOT Direct Official'},
+{brand:'tosot',code:'E7',name:'تعارض أوضاع التشغيل',type:'electric',typeName:'تنبيه',severity:'low',cause:'وحدات داخلية تعمل في أوضاع مختلفة.',steps:['اضبط جميع الوحدات على نفس الوضع','أعد تشغيل الجهاز'],note:'ليس عطلاً - تعارض إعدادات',src:'TOSOT Comfort Official'},
+{brand:'tosot',code:'E8',name:'حمل زائد على الجهاز',type:'compressor',typeName:'كمبروسور',severity:'med',cause:'الجهاز يعمل تحت حمل زائد بسبب فلتر متسخ أو كويل متسخ.',steps:['نظف فلتر الهواء','نظف الكويل الداخلي والخارجي','تأكد من عدم إعاقة التهوية'],note:'TOSOT: E8 = overload - نظف الفلاتر أولاً',src:'TOSOT Direct Official (tosotdirect.com)'},
+{brand:'tosot',code:'F0',name:'حماية التيار الزائد - الخارجية',type:'compressor',typeName:'كمبروسور',severity:'high',cause:'ارتفاع تيار الوحدة الخارجية.',steps:['قس الجهد','افحص الكمبروسور','قس التيار','افحص بورد الإنفرتر'],note:null,src:'TOSOT Direct Official'},
+{brand:'tosot',code:'F1',name:'خطأ حساس الجو الخارجي',type:'sensor',typeName:'حساس حرارة',severity:'low',cause:'تلف حساس الجو الخارجي.',steps:['افصل الجهاز دقيقتين وأعد التشغيل','افحص الحساس ومقاومته','استبدله'],note:'TOSOT: افصل الجهاز دقيقتين وأعد المحاولة أولاً',src:'TOSOT Official Troubleshooting'},
+{brand:'tosot',code:'F2',name:'خطأ حساس الكندنسر الخارجي',type:'sensor',typeName:'حساس حرارة',severity:'low',cause:'تلف حساس لفائف الكندنسر.',steps:['افحص الحساس ومقاومته','استبدله'],note:null,src:'TOSOT Official Troubleshooting'},
+{brand:'tosot',code:'F4',name:'خطأ حساس خرج الكمبروسور',type:'sensor',typeName:'حساس حرارة',severity:'med',cause:'تلف حساس درجة حرارة خرج الكمبروسور.',steps:['افصل الجهاز دقيقتين وأعد التشغيل','افحص الحساس ومقاومته','استبدله'],note:'TOSOT: F1/F2/F4 = خطأ حساس حرارة',src:'TOSOT Official Troubleshooting'},
+{brand:'tosot',code:'H5',name:'حماية تيار زائد - Over Current',type:'compressor',typeName:'كمبروسور',severity:'high',cause:'ارتفاع تيار الكمبروسور أو الوحدة الخارجية.',steps:['قس الجهد','نظف الفلتر','افحص الكمبروسور','قس التيار بكلاب أمبير'],note:'TOSOT: H5 = over current protection',src:'TOSOT Direct Official (tosotdirect.com)'},
+{brand:'tosot',code:'U3',name:'انخفاض جهد الناقل DC',type:'electric',typeName:'كهربائي',severity:'high',cause:'انخفاض الجهد على ناقل DC في بورد الإنفرتر.',steps:['قس الجهد الكهربائي الرئيسي','تأكد من استقرار الكهرباء','افحص بورد الإنفرتر والمكثفات','يتطلب تقييم من فني متخصص'],note:'GREE: U3 = voltage drop - يتطلب تقييم احترافي',src:'GREE Comfort Official (greecomfort.com)'},
+// ══════════ GENERAL ══════════
+{brand:'general',code:'E0',name:'خطأ EEPROM - ذاكرة البورد',type:'electric',typeName:'كهربائي',severity:'high',cause:'تلف شريحة ذاكرة البورد.',steps:['أوقف 10 دقائق','أعد التشغيل','ركب مثبت جهد','استبدل البورد إذا تكرر'],note:null,src:'AC Error Code Reference'},
+{brand:'general',code:'E1',name:'خطأ حساس درجة حرارة الغرفة',type:'sensor',typeName:'حساس حرارة',severity:'med',cause:'تلف الثرمستور الداخلي.',steps:['افصل وأعد التشغيل','افحص الحساس ومقاومته','استبدله'],note:null,src:'AC Error Code Reference'},
+{brand:'general',code:'E2',name:'خطأ حساس لفائف التبخير',type:'sensor',typeName:'حساس حرارة',severity:'med',cause:'تلف ثرمستور الكويل الداخلي.',steps:['افحص الحساس','تأكد من عدم تجمد اللفائف','استبدله'],note:null,src:'AC Error Code Reference'},
+{brand:'general',code:'E3',name:'عطل مروحة الوحدة الداخلية',type:'electric',typeName:'كهربائي',severity:'med',cause:'تلف موتور مروحة الفان كويل.',steps:['دوّر المروحة يدوياً','افحص المكثف','قس تيار الموتور','استبدل الموتور أو المكثف'],note:null,src:'AC Error Code Reference'},
+{brand:'general',code:'E4',name:'حماية الضغط العالي',type:'refrigerant',typeName:'تبريد/غاز',severity:'high',cause:'ضغط عالٍ في الجانب الساخن.',steps:['أوقف فوراً','نظف الكندنسر','افحص مروحة الخارجية','تأكد من التهوية','قس الضغط'],note:null,src:'AC Error Code Reference'},
+{brand:'general',code:'E5',name:'حماية التيار الزائد',type:'compressor',typeName:'كمبروسور',severity:'high',cause:'ارتفاع تيار الكمبروسور.',steps:['قس الجهد (220V±10%)','افحص المكثف','قس التيار بكلاب أمبير','افحص الكمبروسور'],note:null,src:'AC Error Code Reference'},
+{brand:'general',code:'E6',name:'عطل تواصل الوحدتين',type:'communication',typeName:'اتصال',severity:'med',cause:'قطع أو تلف كابل الاتصال.',steps:['افحص الكابل','تأكد من التوصيل','استبدل الكابل','افحص البوردات'],note:null,src:'AC Error Code Reference'},
+{brand:'general',code:'E7',name:'خطأ حساس الوحدة الخارجية',type:'sensor',typeName:'حساس حرارة',severity:'low',cause:'تلف ثرمستور الوحدة الخارجية.',steps:['افحص الحساس ومقاومته','استبدله'],note:null,src:'AC Error Code Reference'},
+{brand:'general',code:'E8',name:'حماية التجمد - الفروست',type:'refrigerant',typeName:'تبريد/غاز',severity:'med',cause:'تجمد لفائف التبخير.',steps:['أوقف وانتظر 30 دقيقة','نظف الفلتر','افحص الغاز','افحص المروحة الداخلية'],note:null,src:'AC Error Code Reference'},
+// ══════════ WADI ══════════
+{brand:'wadi',code:'E1',name:'خطأ حساس درجة حرارة الغرفة',type:'sensor',typeName:'حساس حرارة',severity:'med',cause:'تلف الثرمستور الداخلي.',steps:['أعد التشغيل','افحص الحساس ومقاومته','استبدله'],note:null,src:'WADI Technical Manual'},
+{brand:'wadi',code:'E2',name:'خطأ حساس لفائف التبخير',type:'sensor',typeName:'حساس حرارة',severity:'med',cause:'تلف حساس الكويل الداخلي.',steps:['افحص الحساس','تحقق من تجمد الكويل','استبدله'],note:null,src:'WADI Technical Manual'},
+{brand:'wadi',code:'E3',name:'حماية الضغط العالي',type:'refrigerant',typeName:'تبريد/غاز',severity:'high',cause:'ضغط مرتفع في الدارة.',steps:['أوقف فوراً','نظف الكندنسر','افحص المروحة','قس الضغط'],note:null,src:'WADI Technical Manual'},
+{brand:'wadi',code:'E4',name:'نقص غاز المبرد',type:'refrigerant',typeName:'تبريد/غاز',severity:'high',cause:'تسريب غاز.',steps:['افحص التسريب','أصلحه','غير الفلتر','أعد الشحن'],note:null,src:'WADI Technical Manual'},
+{brand:'wadi',code:'E5',name:'حماية التيار الزائد',type:'compressor',typeName:'كمبروسور',severity:'high',cause:'ارتفاع تيار الكمبروسور.',steps:['قس الجهد','افحص المكثف','قس التيار','افحص الكمبروسور'],note:null,src:'WADI Technical Manual'},
+{brand:'wadi',code:'E6',name:'عطل اتصال الوحدتين',type:'communication',typeName:'اتصال',severity:'med',cause:'قطع كابل الاتصال.',steps:['افحص الكابل','نظف التوصيلات','استبدله','افحص البوردات'],note:null,src:'WADI Technical Manual'},
+{brand:'wadi',code:'F1',name:'عطل مروحة الوحدة الداخلية',type:'electric',typeName:'كهربائي',severity:'med',cause:'تلف موتور المروحة الداخلية.',steps:['افحص دوران المروحة','افحص المكثف','استبدل الموتور'],note:null,src:'WADI Technical Manual'},
+{brand:'wadi',code:'F2',name:'ارتفاع حرارة الكمبروسور',type:'compressor',typeName:'كمبروسور',severity:'high',cause:'ارتفاع حرارة خرج الكمبروسور.',steps:['أوقف وانتظر 30 دقيقة','افحص الغاز','نظف الكندنسر','افحص الضغط'],note:null,src:'WADI Technical Manual'},
+{brand:'wadi',code:'P1',name:'جهد كهربائي غير مستقر',type:'electric',typeName:'كهربائي',severity:'med',cause:'انخفاض أو ارتفاع الجهد عن النطاق.',steps:['قس الجهد (220V±10%)','ركب مثبت جهد','افحص الأسلاك'],note:null,src:'WADI Technical Manual'},
+{brand:'wadi',code:'E7',name:'خطأ حساس الوحدة الخارجية',type:'sensor',typeName:'حساس حرارة',severity:'low',cause:'تلف الثرمستور في الوحدة الخارجية.',steps:['افحص الحساس ومقاومته','استبدله'],note:null,src:'WADI Technical Manual'},
+// ══════════ BALSAN ══════════
+{brand:'balsan',code:'E1',name:'خطأ حساس درجة حرارة الغرفة',type:'sensor',typeName:'حساس حرارة',severity:'med',cause:'تلف الثرمستور الداخلي.',steps:['أعد التشغيل','افحص الحساس ومقاومته','استبدله'],note:null,src:'Balsan Technical Reference'},
+{brand:'balsan',code:'E2',name:'خطأ حساس التبخير',type:'sensor',typeName:'حساس حرارة',severity:'med',cause:'تلف حساس الكويل الداخلي.',steps:['افحص الحساس','نظف الكويل والفلتر','استبدله'],note:null,src:'Balsan Technical Reference'},
+{brand:'balsan',code:'E3',name:'حماية الضغط العالي',type:'refrigerant',typeName:'تبريد/غاز',severity:'high',cause:'ضغط مرتفع في الدارة.',steps:['أوقف فوراً','نظف الكندنسر','افحص المروحة','قس الضغط'],note:null,src:'Balsan Technical Reference'},
+{brand:'balsan',code:'E4',name:'نقص غاز المبرد',type:'refrigerant',typeName:'تبريد/غاز',severity:'high',cause:'تسريب غاز.',steps:['افحص التسريب','أصلحه','غير الفلتر','أعد الشحن'],note:null,src:'Balsan Technical Reference'},
+{brand:'balsan',code:'E5',name:'حماية الكمبروسور',type:'compressor',typeName:'كمبروسور',severity:'high',cause:'ارتفاع تيار أو حرارة الكمبروسور.',steps:['قس الجهد','افحص المكثف','قس التيار','افحص الكمبروسور'],note:null,src:'Balsan Technical Reference'},
+{brand:'balsan',code:'E6',name:'عطل اتصال الوحدتين',type:'communication',typeName:'اتصال',severity:'med',cause:'قطع كابل الاتصال.',steps:['افحص الكابل','استبدله','افحص البوردات'],note:null,src:'Balsan Technical Reference'},
+{brand:'balsan',code:'E7',name:'عطل مروحة الداخلية',type:'electric',typeName:'كهربائي',severity:'med',cause:'تلف موتور المروحة الداخلية.',steps:['افحص المروحة','افحص المكثف','استبدل الموتور'],note:null,src:'Balsan Technical Reference'},
+{brand:'balsan',code:'E8',name:'عطل مروحة الخارجية',type:'electric',typeName:'كهربائي',severity:'med',cause:'تلف موتور المروحة الخارجية.',steps:['افحص المروحة','افحص المكثف','استبدل الموتور'],note:null,src:'Balsan Technical Reference'},
+{brand:'balsan',code:'P1',name:'جهد كهربائي خارج النطاق',type:'electric',typeName:'كهربائي',severity:'med',cause:'انخفاض أو ارتفاع الجهد.',steps:['قس الجهد (220V±10%)','ركب مثبت جهد','افحص الأسلاك'],note:null,src:'Balsan Technical Reference'},
+{brand:'balsan',code:'F1',name:'خطأ EEPROM البورد',type:'electric',typeName:'كهربائي',severity:'high',cause:'تلف شريحة ذاكرة البورد.',steps:['أوقف 10 دقائق','أعد التشغيل','استبدل البورد إذا تكرر'],note:null,src:'Balsan Technical Reference'},
+{brand:'balsan',code:'F2',name:'ارتفاع حرارة الكمبروسور',type:'compressor',typeName:'كمبروسور',severity:'high',cause:'ارتفاع حرارة الكمبروسور.',steps:['أوقف وانتظر تبريده','افحص الغاز','نظف الكندنسر','افحص الضغط'],note:null,src:'Balsan Technical Reference'},
+// ══════════ GÉANT/ARTICO ══════════
+{brand:'geant',code:'E1',name:'خطأ حساس درجة حرارة الغرفة',type:'sensor',typeName:'حساس حرارة',severity:'med',cause:'تلف الثرمستور الداخلي.',steps:['أعد التشغيل','افحص الحساس ومقاومته','استبدله'],note:null,src:'Géant/Artico Technical Manual'},
+{brand:'geant',code:'E2',name:'خطأ حساس التبخير',type:'sensor',typeName:'حساس حرارة',severity:'med',cause:'تلف حساس الكويل الداخلي.',steps:['افحص الحساس','نظف الكويل','استبدله'],note:null,src:'Géant/Artico Technical Manual'},
+{brand:'geant',code:'E3',name:'حماية الضغط العالي',type:'refrigerant',typeName:'تبريد/غاز',severity:'high',cause:'ضغط عالٍ في دارة الغاز.',steps:['أوقف فوراً','نظف الكندنسر','افحص المروحة','قس الضغط'],note:null,src:'Géant/Artico Technical Manual'},
+{brand:'geant',code:'E4',name:'نقص غاز المبرد',type:'refrigerant',typeName:'تبريد/غاز',severity:'high',cause:'تسريب غاز.',steps:['افحص التسريب','أصلحه','غير الفلتر','اشحن الغاز'],note:null,src:'Géant/Artico Technical Manual'},
+{brand:'geant',code:'E5',name:'عطل الكمبروسور',type:'compressor',typeName:'كمبروسور',severity:'high',cause:'ارتفاع تيار أو حرارة الكمبروسور.',steps:['افحص الجهد','قس التيار','افحص المكثف','استبدل الكمبروسور إذا لزم'],note:null,src:'Géant/Artico Technical Manual'},
+{brand:'geant',code:'E6',name:'عطل اتصال الوحدتين',type:'communication',typeName:'اتصال',severity:'med',cause:'انقطاع كابل الاتصال.',steps:['افحص الكابل','استبدله إذا تلف','افحص البوردات'],note:null,src:'Géant/Artico Technical Manual'},
+{brand:'geant',code:'E7',name:'عطل مروحة الوحدة الداخلية',type:'electric',typeName:'كهربائي',severity:'med',cause:'تلف موتور المروحة الداخلية.',steps:['افحص دوران المروحة','افحص المكثف','استبدل الموتور'],note:null,src:'Géant/Artico Technical Manual'},
+{brand:'geant',code:'P1',name:'جهد كهربائي منخفض',type:'electric',typeName:'كهربائي',severity:'med',cause:'انخفاض الجهد عن 190 فولت.',steps:['قس الجهد (220V±10%)','ركب مثبت جهد','افحص الأسلاك'],note:'الجهد الصحيح: 220V ± 10%',src:'Géant/Artico Technical Manual'},
+{brand:'geant',code:'P2',name:'ارتفاع حرارة مفرط',type:'compressor',typeName:'كمبروسور',severity:'high',cause:'ارتفاع حرارة الجهاز.',steps:['أوقف وانتظر تبريده','تأكد من التهوية','نظف الكندنسر','افحص الغاز'],note:null,src:'Géant/Artico Technical Manual'},
+// ══════════ ALHAFIDH ══════════
+{brand:'alhafidh',code:'E1',name:'خطأ حساس درجة حرارة الغرفة',type:'sensor',typeName:'حساس حرارة',severity:'med',cause:'تلف الثرمستور الداخلي.',steps:['أعد التشغيل','افحص الحساس ومقاومته','استبدله'],note:null,src:'Alhafidh Technical Reference'},
+{brand:'alhafidh',code:'E2',name:'خطأ حساس التبخير',type:'sensor',typeName:'حساس حرارة',severity:'med',cause:'تلف حساس الكويل الداخلي.',steps:['افحص الحساس','تحقق من التجمد','استبدله'],note:null,src:'Alhafidh Technical Reference'},
+{brand:'alhafidh',code:'E3',name:'حماية الضغط العالي',type:'refrigerant',typeName:'تبريد/غاز',severity:'high',cause:'ضغط مرتفع في الدارة.',steps:['أوقف فوراً','نظف الكندنسر','افحص المروحة','قس الضغط'],note:null,src:'Alhafidh Technical Reference'},
+{brand:'alhafidh',code:'E4',name:'نقص غاز المبرد',type:'refrigerant',typeName:'تبريد/غاز',severity:'high',cause:'تسريب غاز.',steps:['افحص التسريب','أصلحه','غير الفلتر','أعد الشحن'],note:null,src:'Alhafidh Technical Reference'},
+{brand:'alhafidh',code:'E5',name:'حماية التيار الزائد',type:'compressor',typeName:'كمبروسور',severity:'high',cause:'ارتفاع تيار الكمبروسور.',steps:['قس الجهد','افحص المكثف','قس التيار','افحص الكمبروسور'],note:null,src:'Alhafidh Technical Reference'},
+{brand:'alhafidh',code:'E6',name:'عطل اتصال الوحدتين',type:'communication',typeName:'اتصال',severity:'med',cause:'قطع كابل الاتصال.',steps:['افحص الكابل','استبدله','افحص البوردات'],note:null,src:'Alhafidh Technical Reference'},
+{brand:'alhafidh',code:'E7',name:'عطل مروحة الداخلية',type:'electric',typeName:'كهربائي',severity:'med',cause:'تلف موتور المروحة الداخلية.',steps:['افحص المروحة','افحص المكثف','استبدل الموتور'],note:null,src:'Alhafidh Technical Reference'},
+{brand:'alhafidh',code:'E8',name:'عطل مروحة الخارجية',type:'electric',typeName:'كهربائي',severity:'med',cause:'تلف موتور المروحة الخارجية.',steps:['افحص المروحة','افحص المكثف','استبدل الموتور'],note:null,src:'Alhafidh Technical Reference'},
+{brand:'alhafidh',code:'E9',name:'خطأ حساس الوحدة الخارجية',type:'sensor',typeName:'حساس حرارة',severity:'low',cause:'تلف الثرمستور في الوحدة الخارجية.',steps:['افحص الحساس ومقاومته','استبدله'],note:null,src:'Alhafidh Technical Reference'},
+{brand:'alhafidh',code:'F1',name:'ارتفاع حرارة الكمبروسور',type:'compressor',typeName:'كمبروسور',severity:'high',cause:'ارتفاع حرارة الكمبروسور.',steps:['أوقف وانتظر تبريده','افحص الغاز','نظف الكندنسر','افحص الضغط'],note:'الارتفاع المتكرر يتلف الكمبروسور',src:'Alhafidh Technical Reference'},
+{brand:'alhafidh',code:'F2',name:'خطأ EEPROM البورد الرئيسي',type:'electric',typeName:'كهربائي',severity:'high',cause:'تلف شريحة ذاكرة البورد.',steps:['أوقف 10 دقائق','أعد التشغيل','استبدل البورد إذا تكرر'],note:'ركب مثبت جهد لمنع التكرار',src:'Alhafidh Technical Reference'},
+{brand:'alhafidh',code:'P1',name:'جهد كهربائي غير مستقر',type:'electric',typeName:'كهربائي',severity:'med',cause:'انخفاض أو ارتفاع الجهد.',steps:['قس الجهد (220V±10%)','ركب مثبت جهد','افحص الأسلاك'],note:null,src:'Alhafidh Technical Reference'},
 ];
 
-let aB='all', aT='all';
-
+let aB='all',aT='all';
 function getFiltered(){
   const q=document.getElementById('si').value.trim().toLowerCase();
   return faults.filter(f=>{
     const bOk=aB==='all'||f.brand===aB;
     const tOk=aT==='all'||f.type===aT;
-    const sOk=!q||f.code.toLowerCase().includes(q)||f.name.includes(q)||f.cause.includes(q)||f.typeName.includes(q)||f.brand.toLowerCase().includes(q)||f.brand.includes(q);
+    const sOk=!q||f.code.toLowerCase().includes(q)||f.name.includes(q)||f.cause.includes(q)||f.brand.toLowerCase().includes(q);
     return bOk&&tOk&&sOk;
   });
 }
-
 function render(){
   const data=getFiltered();
   const grid=document.getElementById('grid');
@@ -834,31 +379,19 @@ function render(){
     const bc=BC[f.brand]||'#475569';
     const tc=TC[f.type]||'tb-other';
     const sc=SC[f.severity]||'';
-    const tl=TL[f.type]||f.typeName;
-    const sl=SL[f.severity]||'';
-    return `<div class="card" style="animation-delay:${i*.025}s" onclick="openModal(${faults.indexOf(f)})">
+    return `<div class="card" style="animation-delay:${i*.02}s" onclick="openModal(${faults.indexOf(f)})">
       <div class="card-top">
-        <div>
-          <div class="ccode" style="background:${bc}">${f.code}</div>
-          <div class="cbrand-name" style="color:${bc}">${f.brand.toUpperCase()}</div>
-        </div>
-        <div class="cbadges">
-          <span class="cbadge ${tc}">${tl}</span>
-          <span class="cbadge ${sc}">${sl}</span>
-        </div>
+        <div><div class="ccode" style="background:${bc}">${f.code}</div><div class="cbrand-name" style="color:${bc}">${f.brand.toUpperCase()}</div></div>
+        <div class="cbadges"><span class="cbadge ${tc}">${TL[f.type]||f.typeName}</span><span class="cbadge ${sc}">${SL[f.severity]||''}</span></div>
       </div>
       <div class="card-body">
         <div class="fname">${f.name}</div>
-        <div class="finfo"><strong>السبب: </strong>${f.cause.length>85?f.cause.substring(0,85)+'...':f.cause}</div>
+        <div class="finfo"><strong>السبب: </strong>${f.cause.length>80?f.cause.substring(0,80)+'...':f.cause}</div>
       </div>
-      <div class="card-foot">
-        <div class="foot-lbl">✅ الحل</div>
-        ${f.steps[0]}${f.steps.length>1?' ...':''}
-      </div>
+      <div class="card-foot"><div class="foot-lbl">✅ الحل</div>${f.steps[0]}${f.steps.length>1?' ...':''}</div>
     </div>`;
   }).join('');
 }
-
 function openModal(idx){
   const f=faults[idx];
   const bc=BC[f.brand]||'#475569';
@@ -867,10 +400,7 @@ function openModal(idx){
   document.getElementById('mCode').textContent=f.code;
   document.getElementById('mCode').style.background=bc;
   document.getElementById('mName').textContent=f.name;
-  document.getElementById('mBadges').innerHTML=`
-    <span class="cbadge ${tc}" style="margin-left:5px">${TL[f.type]||f.typeName}</span>
-    <span class="cbadge ${sc}">${SL[f.severity]||''}</span>
-    <span class="cbadge tb-other">${f.brand.toUpperCase()}</span>`;
+  document.getElementById('mBadges').innerHTML=`<span class="cbadge ${tc}" style="margin-left:5px">${TL[f.type]||f.typeName}</span><span class="cbadge ${sc}">${SL[f.severity]||''}</span><span class="cbadge tb-other">${f.brand.toUpperCase()}</span>`;
   document.getElementById('mType').textContent=f.typeName;
   document.getElementById('mCause').textContent=f.cause;
   document.getElementById('mSteps').innerHTML=f.steps.map((s,i)=>`<li data-n="${i+1}">${s}</li>`).join('');
@@ -880,7 +410,6 @@ function openModal(idx){
   document.getElementById('ov').classList.add('open');
   document.body.style.overflow='hidden';
 }
-
 function closeOv(e){if(e.target===document.getElementById('ov'))closeModal();}
 function closeModal(){document.getElementById('ov').classList.remove('open');document.body.style.overflow='';}
 function setBrand(b,el){aB=b;document.querySelectorAll('.btab').forEach(x=>x.classList.remove('active'));el.classList.add('active');render();}
